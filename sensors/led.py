@@ -1,4 +1,7 @@
 def getLedStatus():
     return True
-def sum(a,b):
-    return a+b
+def LedOn():
+    return True
+def LedOff():
+    return True
+    

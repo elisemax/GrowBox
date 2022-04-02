@@ -1,0 +1,26 @@
+{
+    "ledStatus":{
+        "ledOn":"true",
+        "intensive":"300lm",
+        "typeLigth":"ultraviolet"
+    },
+    "temperatureSensor":{
+        "Actual":"23C",
+        "Before":"21C"
+    },
+    "WaterPomps":{
+        "DriveStatus":"turnOff",
+        "DriveOn":{
+            "timer":"0:30",
+            "power":"3W"
+        }
+    },
+    "time":"3:09",
+    "phSens":{
+
+    },
+    "ecSens":{
+
+    }
+
+}
