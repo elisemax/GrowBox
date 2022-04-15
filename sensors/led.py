@@ -1,7 +1,11 @@
-def getLedStatus():
-    return True
+import re
+
+
 def LedOn():
-    return True
+    return 'true'
 def LedOff():
-    return True
-    
+    return 'false'
+def get_intensive():
+    return 'someValue'
+def getTypeLight():
+    return 'Ultra'
