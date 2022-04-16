@@ -1,16 +1,22 @@
 
 
 
+
+from email.utils import localtime
 import requests
 import JsonAdapter.adapter
+import time
 
-r = requests.post('http://httpbin.org/post', json={"key": "value"})
-#print(r.status_code)
+
 systemGrow = JsonAdapter.adapter.Adapter()
-#while(True):
-
-systemGrow.get_ledStatus()
-systemGrow.ledTurnOn()
-print(systemGrow.get_ledStatus())
-
-
+while(True):   
+    #localtime = time.localtime()
+    #result = time.strftime("%H:%M:%S",localtime)
+    #print(result)
+    time.sleep(1)
+    rGet = requests.get('http://192.168.0.10:8080/grow/status',json=systemGrow.Json_Obj())
+    timerJsonObj = rGet.text
+    systemGrow.ledTimerControl(timerJsonObj)
+    systemGrow.ledUpdateStatus()
+    systemGrow.Json_Upd()
+    print(rGet.status_code)
