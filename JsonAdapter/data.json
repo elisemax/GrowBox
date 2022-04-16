@@ -1,1 +1,1 @@
-{"ledStatus": {"ledOn": "false", "intensive": "300lm", "typeLigth": "ultraviolet"}, "temperatureSensor": "23", "WaterPomps": {"DriveStatus": "turnOff", "DriveOn": {"timer": "0:30", "power": "3W"}}, "timeRpi": "3:09", "phSens": {}, "ecSens": {}}
+{"ledStatus": {"ledOn": "false", "lightsOn": "13:58", "lightsOff": "17:58", "LightsOn": "10:54", "LightsOff": "16:54"}, "temperature": 465.0, "waterControl": {"state": true, "temp": 4.654}, "ph": 64.32, "ec": 25.35}
