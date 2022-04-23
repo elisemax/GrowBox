@@ -20,8 +20,8 @@ while(True):
     systemGrow.Json_Upd()
     systemGrow.temperatureUpdate()
     time.sleep(2)
-    #systemGrow.ledUpdateStatus(tJsonObj)
-    #systemGrow.get_ledStatus()
+    systemGrow.ledUpdateStatus(tJsonObj)
+    systemGrow.get_ledStatus()
     systemGrow.tdsUpdate()
     print(rGet.status_code)
     
