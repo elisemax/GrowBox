@@ -22,7 +22,6 @@ while(True):
     time.sleep(2)
     systemGrow.ledUpdateStatus(tJsonObj)
     systemGrow.get_ledStatus()
-    print(systemGrow.get_ledStatus())
     systemGrow.tdsUpdate()
     print(rGet.status_code)
     
