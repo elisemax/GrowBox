@@ -23,5 +23,6 @@ while(True):
     systemGrow.ledTurnOn()
     time.sleep(5)
     systemGrow.ledTurnOff()
+    systemGrow.tdsUpdate()
     print(rGet.status_code)
     
