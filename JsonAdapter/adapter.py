@@ -39,7 +39,7 @@ class Adapter:
         return self.ledStatus
     def ledUpdateStatus(self,ledOn):
         jsonLedStatus = json.load(ledOn)
-        self.data['ledStatus']['ledOn'] = jsonLedStatus['ledStatus']['ledOn']
+        self.data['ledStatus']['ledOn'] = jsonLedStatus['ledOn']
     def phUpdate(self):
         self.data["ph"] = sensors.phSens.read_voltage()
     def tdsUpdate(self):
