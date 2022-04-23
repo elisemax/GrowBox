@@ -2,6 +2,7 @@
 import sensors.temperature
 import json 
 import sensors.led
+import sensors.phSens
 class Adapter:
     def __init__(self):
         self.json_path = 'JsonAdapter/data.json'
@@ -11,6 +12,7 @@ class Adapter:
         self.ledTimerOn = self.data['ledStatus']['lightsOn']
         self.ledTimerOff = self.data['ledStatus']['lightsOff']
         self.timer = 3.12
+        self.ph = self.data["ph"]
     def Json_Obj(self):
         with open(self.json_path) as f:
             data = json.load(f)
@@ -38,3 +40,5 @@ class Adapter:
     def ledUpdateStatus(self):
         self.data['ledStatus']['lightsOn'] = self.ledTimerOn
         self.data['ledStatus']['lightsOff'] = self.ledTimerOff
+    def phUpdate(self):
+        self.data["ph"] = sensors.phSens.read_voltage()
