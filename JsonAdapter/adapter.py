@@ -25,7 +25,7 @@ class Adapter:
             json.dump(self.data,f)
     def temperatureUpdate(self):
         #self.temperature = sensors.temperature.get_temperature1()
-        self.data['temperature'] = sensors.temperature.get_temperature1()
+        self.data['temperature'] = sensors.temperature.get_temperature()
     def get_temperature(self):
         self.temperature = self.data['temperature']
         return self.temperature
