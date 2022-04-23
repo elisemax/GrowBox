@@ -37,8 +37,8 @@ class Adapter:
         self.ledStatus = self.data['ledStatus']['ledOn']
         sensors.led.ledControl(self.ledStatus)
         return self.ledStatus
-    def ledUpdateStatus(self,ledOn):
-        jsonLedStatus = json.load(ledOn)
+    def ledUpdateStatus(self,ledX):
+        jsonLedStatus = json.loads(ledX)
         self.data['ledStatus']['ledOn'] = jsonLedStatus['ledOn']
     def phUpdate(self):
         self.data["ph"] = sensors.phSens.read_voltage()
