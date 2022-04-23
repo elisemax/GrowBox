@@ -21,6 +21,7 @@ while(True):
     systemGrow.ledUpdateStatus()
     systemGrow.Json_Upd()
     systemGrow.ledTurnOn()
+    systemGrow.temperatureUpdate()
     time.sleep(5)
     systemGrow.ledTurnOff()
     systemGrow.tdsUpdate()
