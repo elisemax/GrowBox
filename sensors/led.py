@@ -7,13 +7,13 @@ import RPi.GPIO as GPIO
 
 
 def LedOn():
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BCM, GPIO.OUT)
     GPIO.setwarnings(False)
     OutputPins = 13
     GPIO.output(OutputPins, True)
     return 'true'
 def LedOff():
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BCM, GPIO.OUT)
     GPIO.setwarnings(False)
     OutputPins = 13
     GPIO.output(OutputPins, False)
