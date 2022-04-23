@@ -15,14 +15,13 @@ while(True):
     #print(result)
     time.sleep(1)
     rGet = requests.get('http://192.168.0.10:8080/grow/status',json=systemGrow.Json_Obj())
-    timerJsonObj = rGet.text
-    systemGrow.ledTimerControl(timerJsonObj)
+    tJsonObj = rGet.text
     systemGrow.phUpdate()
-    systemGrow.ledUpdateStatus()
+    systemGrow.ledUpdateStatus(tJsonObj)
     systemGrow.Json_Upd()
     systemGrow.get_ledStatus()
     systemGrow.temperatureUpdate()
-    time.sleep(5)
+    time.sleep(1)
     systemGrow.tdsUpdate()
     print(rGet.status_code)
     
