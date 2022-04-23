@@ -1,14 +1,20 @@
-import math
-import sys
+import board
+import busio
 import time
-from grove.adc import ADC
+import sys
+import adafruit_ads1x15.ads1115 as ADS
+from adafruit_ads1x15.analog_in import AnalogIn
 
-def TDS():
-    adcX = ADC()
-    value = adcX.adc.read(int(sys.argv[1]))
-    if value != 0:
-        voltage = value*5/1024.0
-        tdsValue = (133.42/voltage*voltage*voltage-255.86*voltage*voltage+857.39*voltage)*0.5
-        return tdsValue
-    else:
-        return 0
+def read_voltage():
+    i2c = busio.I2C(board.SCL, board.SDA)
+    ads = ADS.ADS1115(i2c)
+    channel = AnalogIn(ads, ADS.P2)
+    buf = list()
+        
+    for i in range(10): # Take 10 samples
+        buf.append(channel.voltage)
+    buf.sort() # Sort samples and discard highest and lowest
+    buf = buf[2:-2]
+    avg = (sum(map(float,buf))/6) # Get average value from remaining 6
+    
+    return round(avg,2)

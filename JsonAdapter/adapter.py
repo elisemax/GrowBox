@@ -15,6 +15,7 @@ class Adapter:
         self.ledTimerOff = self.data['ledStatus']['lightsOff']
         self.timer = 3.12
         self.ph = self.data["ph"]
+        self.ec = self.data['ec']
     def Json_Obj(self):
         with open(self.json_path) as f:
             data = json.load(f)
@@ -45,5 +46,6 @@ class Adapter:
     def phUpdate(self):
         self.data["ph"] = sensors.phSens.read_voltage()
     def tdsUpdate(self):
-        self.data['ec'] = sensors.ecSens.TDS()
+        self.data['ec'] = sensors.ecSens.read_voltage()
+    
         

@@ -1,6 +1,5 @@
 #!/usr/bin/python
 ''' Raspberry Pi, ADS1115, PH4502C Calibration '''
-from audioop import avg
 import board
 import busio
 import time
