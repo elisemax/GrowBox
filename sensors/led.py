@@ -5,9 +5,12 @@ import RPi.GPIO as GPIO
 
 
 def ledControl(On):
+    print("First")
     if On == True:
+        print("True")
         LedOn()
     if On == False:
+        print("False")
         LedOff()
 
 def LedOff():
