@@ -20,4 +20,8 @@ while(True):
     systemGrow.phUpdate()
     systemGrow.ledUpdateStatus()
     systemGrow.Json_Upd()
+    systemGrow.ledTurnOn()
+    time.sleep(5)
+    systemGrow.ledTurnOff()
     print(rGet.status_code)
+    
