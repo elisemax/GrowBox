@@ -22,7 +22,7 @@ def LedOff():
     GPIO.setwarnings(False)
     GPIO.output(OutputPin1, GPIO.HIGH)
     GPIO.output(OutputPin2, GPIO.HIGH)
-    return 'true'
+    print("LedOff")
 def LedOn():
     GPIO.setmode(GPIO.BCM)
     OutputPin1 = 13
@@ -32,4 +32,4 @@ def LedOn():
     GPIO.setwarnings(False)
     GPIO.output(OutputPin1, GPIO.LOW)
     GPIO.output(OutputPin2, GPIO.LOW)
-    return 'false'
+    print("LedOn")
