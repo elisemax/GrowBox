@@ -4,7 +4,11 @@ import RPi.GPIO as GPIO
 
 
 
-
+def ledControl(On):
+    if(On == True):
+        LedOn()
+    if(On == False):
+        LedOff()
 
 def LedOff():
     GPIO.setmode(GPIO.BCM)

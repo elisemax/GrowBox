@@ -35,6 +35,7 @@ class Adapter:
         self.data['ledStatus']['ledOn'] = sensors.led.LedOn()
     def get_ledStatus(self):
         self.ledStatus = self.data['ledStatus']['ledOn']
+        sensors.led.ledControl(self.ledStatus)
         return self.ledStatus
     def ledTimerControl(self,timer):
         jsonTimer = json.loads(timer)
