@@ -45,7 +45,7 @@ class WaterSensors:
 
     def ph_get_ph():
         voltage = WaterSensors.ph_read_voltage()
-        value = voltage*5.0/1024
+        value = voltage*5.0/1024/6
         return 21.55509299 - (5.641509 * value)
 
     def ec_get_ec():
