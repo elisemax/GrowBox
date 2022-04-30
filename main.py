@@ -30,6 +30,7 @@ while(True):
         print(rGet.status_code)
         g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         g.pull()
+        print('gog')
         
     except Exception:
         pass
