@@ -13,39 +13,39 @@ class WaterSensors:
     m = - 5.641509
     b = 21.55509299
 
-def ec_read_voltage():
-    i2c = busio.I2C(board.SCL, board.SDA)
-    ads = ADS.ADS1115(i2c)
-    channel = AnalogIn(ads, ADS.P2)
-    buf = list()
+    def ec_read_voltage():
+        i2c = busio.I2C(board.SCL, board.SDA)
+        ads = ADS.ADS1115(i2c)
+        channel = AnalogIn(ads, ADS.P2)
+        buf = list()
         
-    for i in range(10): # Take 10 samples
-        buf.append(channel.voltage)
-    buf.sort() # Sort samples and discard highest and lowest
-    buf = buf[2:-2]
-    avg = (sum(map(float,buf))/6) # Get average value from remaining 6
+        for i in range(10): # Take 10 samples
+            buf.append(channel.voltage)
+        buf.sort() # Sort samples and discard highest and lowest
+        buf = buf[2:-2]
+        avg = (sum(map(float,buf))/6) # Get average value from remaining 6
     
-    return round(avg,2)
+        return round(avg,2)
 
     # Setup 
 
-def ph_read_voltage():
-    i2c = busio.I2C(board.SCL, board.SDA)
-    ads = ADS.ADS1115(i2c)
-    channel = AnalogIn(ads, ADS.P0)
-    buf = list()
+    def ph_read_voltage():
+        i2c = busio.I2C(board.SCL, board.SDA)
+        ads = ADS.ADS1115(i2c)
+        channel = AnalogIn(ads, ADS.P0)
+        buf = list()
         
-    for i in range(10): # Take 10 samples
-        buf.append(channel.voltage)
-    buf.sort() # Sort samples and discard highest and lowest
-    buf = buf[2:-2]
-    avg = (sum(map(float,buf))/6) # Get average value from remaining 6
+        for i in range(10): # Take 10 samples
+            buf.append(channel.voltage)
+        buf.sort() # Sort samples and discard highest and lowest
+        buf = buf[2:-2]
+        avg = (sum(map(float,buf))/6) # Get average value from remaining 6
     
-    return round(avg,2)
+        return round(avg,2)
 
-def ph_get_ph():
-    voltage = WaterSensors.ph_read_voltage()
-    return 21.55509299 - 5.641509 * voltage
+    def ph_get_ph():
+        voltage = WaterSensors.ph_read_voltage()
+        return 21.55509299 - 5.641509 * voltage
 
    
 
