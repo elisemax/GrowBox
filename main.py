@@ -6,11 +6,15 @@ from email.utils import localtime
 import requests
 import JsonAdapter.adapter
 import time
+import git
 
 
 systemGrow = JsonAdapter.adapter.Adapter()
 while(True): 
     try:  
+        
+        repo = git.Repo('Path/to/repo')
+        repo.remotes.origin.pull()
         #localtime = time.localtime()
         #result = time.strftime("%H:%M:%S",localtime)
         #print(result)
