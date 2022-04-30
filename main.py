@@ -12,10 +12,13 @@ import git
 systemGrow = JsonAdapter.adapter.Adapter()
 while(True): 
     try:  
-        
-        repo = git.Repo('Path/to/repo')
+        repo = git.Repo('https://github.com/elisemax/GrowBox.git')
+        current = repo.head.commit
         repo.remotes.origin.pull()
-        #localtime = time.localtime()
+        if current != repo.head.commit:
+            print("It changed")
+            repo.remotes.origin.pull()
+        #localtime = time.localtime()  
         #result = time.strftime("%H:%M:%S",localtime)
         #print(result)
         time.sleep(1)
