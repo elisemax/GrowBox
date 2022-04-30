@@ -4,6 +4,7 @@ import json
 import sensors.led
 import sensors.phSens
 import sensors.ecSens
+from sensors.waterSensors import WaterSensors
 
 class Adapter:
     def __init__(self):
@@ -41,8 +42,8 @@ class Adapter:
         jsonLedStatus = json.loads(ledX)
         self.data['ledStatus']['ledOn'] = jsonLedStatus['ledOn']
     def phUpdate(self):
-        self.data["ph"] = sensors.waterSensors.ph_get_ph()
+        self.data["ph"] = WaterSensors.ph_get_ph()
     def tdsUpdate(self):
-        self.data['ec'] = sensors.waterSensors.ec_read_voltage()
+        self.data['ec'] = WaterSensors.ec_read_voltage()
     
         

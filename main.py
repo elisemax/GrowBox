@@ -27,8 +27,6 @@ while(True):
         print(rGet.status_code)
     except:
         print("lost connection to server trying again in 3 seconds")   
-
-    finally: 
         time.sleep(1)
         rGet = requests.get('http://192.168.0.10:8080/grow/status',json=systemGrow.Json_Obj())
         tJsonObj = rGet.text
@@ -40,3 +38,6 @@ while(True):
         systemGrow.get_ledStatus()
         systemGrow.tdsUpdate()
         print(rGet.status_code)
+
+     
+        
