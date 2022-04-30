@@ -41,8 +41,8 @@ class Adapter:
         jsonLedStatus = json.loads(ledX)
         self.data['ledStatus']['ledOn'] = jsonLedStatus['ledOn']
     def phUpdate(self):
-        self.data["ph"] = sensors.phSens.read_voltage()
+        self.data["ph"] = sensors.waterSensors.ph_get_ph()
     def tdsUpdate(self):
-        self.data['ec'] = sensors.ecSens.read_voltage()
+        self.data['ec'] = sensors.waterSensors.ec_read_voltage()
     
         
