@@ -19,7 +19,7 @@ class Adapter:
         self.ph = self.data["ph"]
         self.ec = self.data['ec']
         self.hum = self.data['hum']
-        self.waterLvl = self.data['waterLvl']
+        #self.waterLvl = self.data['waterLvl']
     def Json_Obj(self):
         with open(self.json_path) as f:
             data = json.load(f)
@@ -51,4 +51,6 @@ class Adapter:
     def humUpdate(self):
         self.data['hum'] = WaterSensors.humidity_voltage()
     def waterLevel(self):
-        self.data = WaterSensors.watelLevelControl()
+        #self.data = WaterSensors.watelLevelControl()
+        print(WaterSensors.watelLevelControl())
+        

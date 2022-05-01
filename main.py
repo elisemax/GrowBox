@@ -29,6 +29,7 @@ while(True):
         systemGrow.tdsUpdate()
         systemGrow.humUpdate()
         systemGrow.phUpdate()
+        systemGrow.waterLevel()
         print(rGet.status_code)
         g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         g.pull()
