@@ -42,10 +42,10 @@ class WaterSensors:
         
         for i in range(10): # Take 10 samples
             buf.append(channelo.voltage)
-            print( "chanell 0:")
-            print(channelo.voltage)
-            print( "chanell 1:")
-            print(channel.voltage)
+            #print( "chanell 0:")
+            #print(channelo.voltage)
+            #print( "chanell 1:")
+           # print(channel.voltage)
         buf.sort() # Sort samples and discard highest and lowest
         buf = buf[2:-2]
         avg = (sum(map(float,buf))/6) # Get average value from remaining 6
@@ -60,7 +60,7 @@ class WaterSensors:
         
         for i in range(10): # Take 10 samples
             buf.append(channel.voltage)
-            print("hum")
+            #print("hum")
            # print(channel.voltage)
         buf.sort() # Sort samples and discard highest and lowest
         buf = buf[2:-2]
@@ -83,8 +83,11 @@ class WaterSensors:
         buttonInput = 17
         GPIO.setup(buttonInput, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
         buttonState = GPIO.input(buttonInput)
+        print("1")
         if (buttonState == False):
+            print("2")
             return True
         else:
+            print("3")
             return False
 
