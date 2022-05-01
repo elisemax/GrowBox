@@ -52,6 +52,7 @@ class WaterSensors:
         
         for i in range(10): # Take 10 samples
             buf.append(channel.voltage)
+            print("hum")
             print(channel.voltage)
         buf.sort() # Sort samples and discard highest and lowest
         buf = buf[2:-2]
