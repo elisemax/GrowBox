@@ -17,6 +17,7 @@ class Adapter:
         self.timer = 3.12
         self.ph = self.data["ph"]
         self.ec = self.data['ec']
+        self.hum = self.data['hum']
     def Json_Obj(self):
         with open(self.json_path) as f:
             data = json.load(f)
