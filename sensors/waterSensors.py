@@ -85,10 +85,12 @@ def waterLevelControl():
     GPIO.setup(buttonInput, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     buttonState = GPIO.input(buttonInput)
     print("1")
-    if (buttonState == False):
+    return buttonState
+    if (buttonState == True):
         print("2")
         return True
     else:
         print("3")
         return False
+    
 
