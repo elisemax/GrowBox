@@ -4,6 +4,7 @@ import json
 import sensors.led
 import sensors.phSens
 import sensors.ecSens
+import sensors.waterSensors
 from sensors.waterSensors import WaterSensors
 
 
@@ -51,6 +52,6 @@ class Adapter:
     def humUpdate(self):
         self.data['hum'] = WaterSensors.humidity_voltage()
     def waterLevel(self):
-        self.data['waterLevel'] = WaterSensors.waterLevelControl()
+        self.data['waterLevel'] = sensors.waterSensors.waterLevelControl()
 
         
