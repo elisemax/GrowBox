@@ -45,5 +45,6 @@ class Adapter:
         self.data["ph"] = WaterSensors.ph_get_ph()
     def tdsUpdate(self):
         self.data['ec'] = WaterSensors.ec_get_ec()
-    
+    def humUpdate(self):
+        self.data['hum'] = WaterSensors.humidity_voltage()
         

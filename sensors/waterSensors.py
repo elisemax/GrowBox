@@ -32,14 +32,26 @@ class WaterSensors:
     def ph_read_voltage():
         i2c = busio.I2C(board.SCL, board.SDA)
         ads = ADS.ADS1115(i2c)
-        channel2 = AnalogIn(ads, ADS.P0)
         channel = AnalogIn(ads, ADS.P1)
         buf = list()
         
         for i in range(10): # Take 10 samples
             buf.append(channel.voltage)
             print(channel.voltage)
-            print(channel2.voltage)
+        buf.sort() # Sort samples and discard highest and lowest
+        buf = buf[2:-2]
+        avg = (sum(map(float,buf))/6) # Get average value from remaining 6
+    
+        return round(avg,2)
+    
+    def humidity_voltage():
+        i2c = busio.I2C(board.SCL, board.SDA)
+        ads = ADS.ADS1115(i2c)
+        channel = AnalogIn(ads, ADS.P3)
+        buf = list()
+        
+        for i in range(10): # Take 10 samples
+            buf.append(channel.voltage)
         buf.sort() # Sort samples and discard highest and lowest
         buf = buf[2:-2]
         avg = (sum(map(float,buf))/6) # Get average value from remaining 6
