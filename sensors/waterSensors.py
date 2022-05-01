@@ -6,6 +6,9 @@ import time
 import sys
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
+import Rpi.GPIO as GPIO
+
+
 
 class WaterSensors:
     ph4 = 3.11
@@ -74,7 +77,9 @@ class WaterSensors:
         Voltage = sensorValue*5/1024.0;   # Convert analog reading to Voltage
         return ((133.42/Voltage*Voltage*Voltage - 255.86*Voltage*Voltage + 857.39*Voltage)*0.5)*1000; # Convert voltage value to TDS value
 
-
-
+    def watelLevelControl():
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
    
 

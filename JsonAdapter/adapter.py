@@ -4,7 +4,9 @@ import json
 import sensors.led
 import sensors.phSens
 import sensors.ecSens
+import Rpi.GPIO as GPIO
 from sensors.waterSensors import WaterSensors
+
 
 class Adapter:
     def __init__(self):
@@ -18,6 +20,7 @@ class Adapter:
         self.ph = self.data["ph"]
         self.ec = self.data['ec']
         self.hum = self.data['hum']
+        self.waterLvl = self.data['waterLvl']
     def Json_Obj(self):
         with open(self.json_path) as f:
             data = json.load(f)
@@ -48,4 +51,5 @@ class Adapter:
         self.data['ec'] = WaterSensors.ec_get_ec()
     def humUpdate(self):
         self.data['hum'] = WaterSensors.humidity_voltage()
-        
+    def waterLevel(self):
+        self.data = WaterSensors.watelLevelControl()
