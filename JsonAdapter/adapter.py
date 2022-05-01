@@ -19,7 +19,7 @@ class Adapter:
         self.ph = self.data["ph"]
         self.ec = self.data['ec']
         self.hum = self.data['hum']
-        self.waterLvl = self.data['waterLvl']
+        self.waterLvl = self.data['waterLevel']
     def Json_Obj(self):
         with open(self.json_path) as f:
             data = json.load(f)
