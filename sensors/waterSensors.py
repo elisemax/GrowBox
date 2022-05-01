@@ -80,13 +80,12 @@ class WaterSensors:
 def waterLevelControl():
     print("wtaer 0")
     GPIO.setwarnings(False)
-    GPIO.setmode(GPIO.BOARD)
+    GPIO.setmode(GPIO.BCM)
     buttonInput = 17
     GPIO.setup(buttonInput, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     buttonState = GPIO.input(buttonInput)
     print("1")
-    return buttonState
-    if (buttonState == True):
+    if buttonState == True:
         print("2")
         return True
     else:
