@@ -51,6 +51,6 @@ class Adapter:
     def humUpdate(self):
         self.data['hum'] = WaterSensors.humidity_voltage()
     def waterLevel(self):
-        #self.data = WaterSensors.watelLevelControl()
-        print(WaterSensors.watelLevelControl())
+        self.data = WaterSensors.watelLevelControl()
+
         
