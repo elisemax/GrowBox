@@ -6,7 +6,7 @@ import time
 import sys
 import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
-import Rpi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 
 
