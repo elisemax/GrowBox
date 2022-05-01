@@ -33,11 +33,16 @@ class WaterSensors:
         i2c = busio.I2C(board.SCL, board.SDA)
         ads = ADS.ADS1115(i2c)
         channel = AnalogIn(ads, ADS.P1)
+        channelo = AnalogIn(ads, ADS.P0)
+
         buf = list()
         
         for i in range(10): # Take 10 samples
-            buf.append(channel.voltage)
-           # print(channel.voltage)
+            buf.append(channelo.voltage)
+            print( "chanell 0:")
+            print(channelo.voltage)
+            print( "chanell 1:")
+            print(channel.voltage)
         buf.sort() # Sort samples and discard highest and lowest
         buf = buf[2:-2]
         avg = (sum(map(float,buf))/6) # Get average value from remaining 6
@@ -53,7 +58,7 @@ class WaterSensors:
         for i in range(10): # Take 10 samples
             buf.append(channel.voltage)
             print("hum")
-            print(channel.voltage)
+           # print(channel.voltage)
         buf.sort() # Sort samples and discard highest and lowest
         buf = buf[2:-2]
         avg = (sum(map(float,buf))/6) # Get average value from remaining 6
