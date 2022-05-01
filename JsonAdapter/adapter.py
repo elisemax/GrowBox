@@ -4,7 +4,6 @@ import json
 import sensors.led
 import sensors.phSens
 import sensors.ecSens
-import Rpi.GPIO as GPIO
 from sensors.waterSensors import WaterSensors
 
 
