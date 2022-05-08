@@ -7,12 +7,13 @@ import requests
 import JsonAdapter.adapter
 import time
 import git
+import bluetooth.bluetooth
 
 
 systemGrow = JsonAdapter.adapter.Adapter()
 while(True): 
     try:  
-        
+
         #localtime = time.localtime()  
         #result = time.strftime("%H:%M:%S",localtime)
         #print(result)
@@ -29,6 +30,7 @@ while(True):
         systemGrow.humUpdate()
         systemGrow.phUpdate()
         systemGrow.waterLevel()
+        bluetooth.bluetooth.receiveMessages()
         print(rGet.status_code)
         g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         g.pull()
