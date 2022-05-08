@@ -36,7 +36,7 @@ class WaterSensors:
         i2c = busio.I2C(board.SCL, board.SDA)
         ads = ADS.ADS1115(i2c)
         channel = AnalogIn(ads, ADS.P1)
-        channelo = AnalogIn(ads, ADS.P0)
+        channelo = AnalogIn(ads, ADS.P2)
 
         buf = list()
         
