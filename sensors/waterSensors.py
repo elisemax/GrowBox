@@ -42,10 +42,10 @@ class WaterSensors:
         
         for i in range(10): # Take 10 samples
             buf.append(channelo.voltage)
-            #print( "chanell 0:")
-            #print(channelo.voltage)
-            #print( "chanell 1:")
-           # print(channel.voltage)
+            print( "chanell 0:")
+            print(channelo.voltage)
+            print( "chanell 1:")
+            print(channel.voltage)
         buf.sort() # Sort samples and discard highest and lowest
         buf = buf[2:-2]
         avg = (sum(map(float,buf))/6) # Get average value from remaining 6
