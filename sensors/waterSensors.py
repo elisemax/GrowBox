@@ -70,6 +70,8 @@ class WaterSensors:
 
     def ph_get_ph():
         voltage = WaterSensors.ph_read_voltage()
+        print(voltage)
+        print(voltage)
         return 21.55509299 - (5.641509 * voltage)
 
     def ec_get_ec():
@@ -78,19 +80,15 @@ class WaterSensors:
         return ((133.42/Voltage*Voltage*Voltage - 255.86*Voltage*Voltage + 857.39*Voltage)*0.5)*1000; # Convert voltage value to TDS value
 
 def waterLevelControl():
-    print("wtaer 0")
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
     buttonInput = 17
     GPIO.setup(buttonInput, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     buttonState = GPIO.input(buttonInput)
     print(buttonState)
-    print("1")
     if buttonState == True :
-        print("WAZAPKJCFJCRKLROLOJKFDC")
         return True
     else:
-        print("3")
         return False
     
 

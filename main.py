@@ -12,8 +12,7 @@ import git
 systemGrow = JsonAdapter.adapter.Adapter()
 while(True): 
     try:  
-
-       
+        
         #localtime = time.localtime()  
         #result = time.strftime("%H:%M:%S",localtime)
         #print(result)
