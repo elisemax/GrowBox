@@ -4,7 +4,7 @@ import board
 import busio
 import time
 import sys
-import adafruit_ads1x15.ads1115 as ADS
+import adafruit_ads1x15.ads1015 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 
@@ -18,7 +18,7 @@ class WaterSensors:
 
     def ec_read_voltage():
         i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1115(i2c)
+        ads = ADS.ADS1015(i2c)
         channel = AnalogIn(ads, ADS.P2)
         buf = list()
         
@@ -34,7 +34,7 @@ class WaterSensors:
 
     def ph_read_voltage():
         i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1115(i2c)
+        ads = ADS.ADS1015(i2c)
         channel = AnalogIn(ads, ADS.P0)
         print("ph"+str(channel.voltage))
 
@@ -50,7 +50,7 @@ class WaterSensors:
     
     def humidity_voltage():
         i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1115(i2c)
+        ads = ADS.ADS1015(i2c)
         channel = AnalogIn(ads, ADS.P3)
         buf = list()
         print("Humidity voltage:")
