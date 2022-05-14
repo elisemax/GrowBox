@@ -36,7 +36,7 @@ class WaterSensors:
         i2c = busio.I2C(board.SCL, board.SDA)
         ads = ADS.ADS1015(i2c)
         channel = AnalogIn(ads, ADS.P0)
-        
+        print("ph"+channel.voltage)
 
         buf = list()
         for i in range(10): # Take 10 samples
