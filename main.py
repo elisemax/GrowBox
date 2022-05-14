@@ -40,9 +40,9 @@ while(True):
         systemGrow.phUpdate()
         systemGrow.waterLevel()
         #bluetooth.bluetooth.receiveMessages()
-        print(rGet.status_code)
-        g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
-        g.pull()
+        #print(rGet.status_code)
+        #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
+        #g.pull()
     
         
    # except Exception:

@@ -5,13 +5,13 @@ import RPi.GPIO as GPIO
 
 
 def ledControl(On):
-    print("First")
+    
     if On == True:
         print("True")
-        LedOn()
+        LedOff()
     if On == False:
         print("False")
-        LedOff()
+        LedOn()
 
 def LedOff():
     GPIO.setmode(GPIO.BCM)
@@ -22,7 +22,7 @@ def LedOff():
     GPIO.setwarnings(False)
     GPIO.output(OutputPin1, GPIO.HIGH)
     GPIO.output(OutputPin2, GPIO.HIGH)
-    print("LedOff")
+    print("LedOn")
 def LedOn():
     GPIO.setmode(GPIO.BCM)
     OutputPin1 = 13
@@ -32,4 +32,4 @@ def LedOn():
     GPIO.setwarnings(False)
     GPIO.output(OutputPin1, GPIO.LOW)
     GPIO.output(OutputPin2, GPIO.LOW)
-    print("LedOn")
+    print("LedOff")
