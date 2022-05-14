@@ -42,9 +42,7 @@ class WaterSensors:
         
         for i in range(10): # Take 10 samples
             buf.append(channel.voltage)
-            print( "chanell 0:")
-            print(channel.voltage)
-            print( "chanell 1:")
+            print( "PH voltage:")
             print(channel.voltage)
         buf.sort() # Sort samples and discard highest and lowest
         buf = buf[2:-2]
@@ -57,11 +55,11 @@ class WaterSensors:
         ads = ADS.ADS1015(i2c)
         channel = AnalogIn(ads, ADS.P3)
         buf = list()
-        
+        print("Humidity voltage:")
+        print(channel.voltage)
         for i in range(10): # Take 10 samples
             buf.append(channel.voltage)
-            #print("hum")
-           # print(channel.voltage)
+    
         buf.sort() # Sort samples and discard highest and lowest
         buf = buf[2:-2]
         avg = (sum(map(float,buf))/6) # Get average value from remaining 6
@@ -70,14 +68,19 @@ class WaterSensors:
 
     def ph_get_ph():
         voltage = WaterSensors.ph_read_voltage()
-        print(voltage)
+        print("PH voltahe:")
         print(voltage)
         return 21.55509299 - (5.641509 * voltage)
 
     def ec_get_ec():
         sensorValue = WaterSensors.ec_read_voltage()
+        print("EC sensor value:")
         print(sensorValue)
-        Voltage = sensorValue*5/1024.0;   # Convert analog reading to Voltage
+        if (sensorValue==0.0):
+            return 0
+        Voltage = (5/1024.0)*sensorValue;   # Convert analog reading to Voltage
+        print("EC voltage:")
+        print(Voltage)
         return ((133.42/Voltage*Voltage*Voltage - 255.86*Voltage*Voltage + 857.39*Voltage)*0.5)*1000; # Convert voltage value to TDS value
 
 def waterLevelControl():
