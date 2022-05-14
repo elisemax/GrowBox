@@ -76,7 +76,7 @@ class WaterSensors:
         print(sensorValue)
         if (sensorValue==0.0):
             return 0
-        Voltage = (5/1024.0/6)*sensorValue;   # Convert analog reading to Voltage
+        Voltage = (5/1024.0)*sensorValue;   # Convert analog reading to Voltage
         print("EC voltage:")
         print(Voltage)
         return ((133.42/Voltage*Voltage*Voltage - 255.86*Voltage*Voltage + 857.39*Voltage)*0.5)*1000; # Convert voltage value to TDS value
