@@ -16,7 +16,7 @@ systemGrow = JsonAdapter.adapter.Adapter()
 mac_adress = ""
 get_adress = service.macAdress.get_mac_adress()
 while(True): 
-    try:  
+  #  try:  
 
 
         #localtime = time.localtime()  
@@ -45,9 +45,9 @@ while(True):
         g.pull()
     
         
-    except Exception:
-        print(Exception)
-        pass
+   # except Exception:
+   #     print(Exception)
+   #     pass
 
      
         
