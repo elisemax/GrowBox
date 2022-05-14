@@ -6,17 +6,26 @@ from email.utils import localtime
 import requests
 import JsonAdapter.adapter
 import time
+import service.macAdress
 import git
 
 
 
+
 systemGrow = JsonAdapter.adapter.Adapter()
+mac_adress = ""
+get_adress = service.macAdress.get_mac_adress()
 while(True): 
     try:  
+
 
         #localtime = time.localtime()  
         #result = time.strftime("%H:%M:%S",localtime)
         #print(result)
+        if(mac_adress == ""):
+            mac_adress = get_adress
+            print("mac adrress:")
+            print(mac_adress)
         time.sleep(1)
         rGet = requests.get('http://192.168.0.10:8080/grow/status',json=systemGrow.Json_Obj())
         tJsonObj = rGet.text
@@ -37,6 +46,7 @@ while(True):
     
         
     except Exception:
+        print(Exception)
         pass
 
      
