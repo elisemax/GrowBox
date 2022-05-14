@@ -34,11 +34,8 @@ class WaterSensors:
 
     def ph_read_voltage():
         i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1015(i2c)
-        value = ads.read_adc(1, gain=1)
-        analog_voltage = value*(4.096/32767)
+        ads = ADS.ADS1015(i2c,gain=3)
         print("with gain")
-        print(analog_voltage)
         channel = AnalogIn(ads, ADS.P0)
         
 
