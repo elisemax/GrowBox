@@ -7,7 +7,7 @@ import requests
 import JsonAdapter.adapter
 import time
 import git
-import bluetooth.bluetooth
+
 
 
 systemGrow = JsonAdapter.adapter.Adapter()
