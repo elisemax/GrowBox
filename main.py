@@ -23,7 +23,7 @@ while(True):
         #result = time.strftime("%H:%M:%S",localtime)
         #print(result)
         if(mac_adress == ""):
-            mac_adress = "HNZ.PI.DIR." + get_adress
+            mac_adress = "HNZ.Pi.ID.R." + get_adress
             print("mac adrress:")
             print(mac_adress)
         time.sleep(1)
