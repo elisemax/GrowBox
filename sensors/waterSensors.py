@@ -18,7 +18,7 @@ class WaterSensors:
 
     def ec_read_voltage():
         i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1015(i2c)
+        ads = ADS.ADS1015(i2c,1)
         channel = AnalogIn(ads, ADS.P2)
         buf = list()
         
@@ -34,7 +34,7 @@ class WaterSensors:
 
     def ph_read_voltage():
         i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1015(i2c)
+        ads = ADS.ADS1015(i2c,1)
         channel = AnalogIn(ads, ADS.P0)
         
 
@@ -76,7 +76,7 @@ class WaterSensors:
         print(sensorValue)
         if (sensorValue==0.0):
             return 0
-        Voltage = (5/1024.0)*sensorValue;   # Convert analog reading to Voltage
+        Voltage = (5/1024.0/6)*sensorValue;   # Convert analog reading to Voltage
         print("EC voltage:")
         print(Voltage)
         return ((133.42/Voltage*Voltage*Voltage - 255.86*Voltage*Voltage + 857.39*Voltage)*0.5)*1000; # Convert voltage value to TDS value
