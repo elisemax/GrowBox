@@ -18,7 +18,7 @@ class WaterSensors:
 
     def ec_read_voltage():
         i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1015(i2c,1)
+        ads = ADS.ADS1015(i2c,2/3)
         channel = AnalogIn(ads, ADS.P2)
         buf = list()
         
@@ -34,7 +34,7 @@ class WaterSensors:
 
     def ph_read_voltage():
         i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1015(i2c,1)
+        ads = ADS.ADS1015(i2c,2/3)
         channel = AnalogIn(ads, ADS.P0)
         
 
