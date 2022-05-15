@@ -12,7 +12,7 @@ import git
 
 
 systemGrow = JsonAdapter.adapter.Adapter()
-
+systemGrow.idUpdate()
 while(True): 
   #  try:  
 
