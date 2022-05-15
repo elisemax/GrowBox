@@ -83,7 +83,14 @@ class WaterSensors:
     
     def humidityGetValue():
         voltage = WaterSensors.humidity_voltage()
-        return (voltage-0.8)/3.96
+        print('humidity voltage:')
+        print(voltage)
+        min = 3.96
+        max = 0.8
+        abs = voltage - max
+
+        result = (voltage-max)/(min-max)
+        return (result-1.0)*(-1)
 
 
     def ph_get_ph():
