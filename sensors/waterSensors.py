@@ -80,6 +80,11 @@ class WaterSensors:
         analog_voltage = value*(4.096/2047)
         avg = analog_voltage
         return round(avg,2)
+    
+    def humidityGetValue():
+        voltage = WaterSensors.humidity_voltage()
+        return (voltage-0.8)/3.96
+
 
     def ph_get_ph():
         voltage = WaterSensors.ph_read_voltage()
