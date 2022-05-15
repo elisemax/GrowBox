@@ -67,7 +67,7 @@ class WaterSensors:
         abs = voltage - max
 
         result = (voltage-max)/(min-max)
-        return (result-1.0)*(-1)
+        return round((result-1.0)*(-1)*100,2)
 
 
     def ph_get_ph():
@@ -83,7 +83,7 @@ class WaterSensors:
         Voltage = (5/1024.0)*sensorValue;   # Convert analog reading to Voltage
         print("EC voltage:")
         print(Voltage)
-        return ((133.42/Voltage*Voltage*Voltage - 255.86*Voltage*Voltage + 857.39*Voltage)*0.5)*1000/4; # Convert voltage value to TDS value
+        return round(((133.42/Voltage*Voltage*Voltage - 255.86*Voltage*Voltage + 857.39*Voltage)*0.5)*1000/4,2); # Convert voltage value to TDS value
 
 def waterLevelControl():
     GPIO.setwarnings(False)
