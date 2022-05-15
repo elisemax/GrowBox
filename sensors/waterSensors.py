@@ -56,7 +56,7 @@ class WaterSensors:
         value = adc.read_adc(0,gain=2,data_rate=3300)
         phDiff = 0.006
         k = 5.05
-        avg = value *phDiff *k
+        avg = value *phDiff -k
         print(value)
         print(avg)
         return round(avg,2)
