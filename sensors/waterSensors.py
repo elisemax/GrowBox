@@ -1,17 +1,10 @@
 
 from tokenize import Double
-import board
-import busio
 import time
 import sys
-#import adafruit_ads1x15.ads1015 as ADS
-#from adafruit_ads1x15.analog_in import AnalogIn
 import RPi.GPIO as GPIO
-#some code
 import Adafruit_ADS1x15
-#adc = Adafruit_ADS1x15.ADS1115()
-#value = adc.read_adc(0,gain=1)
-#analog_voltage = value*(4.096/2047)
+
 
 class WaterSensors:
     ph4 = 3.11
