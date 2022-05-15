@@ -39,19 +39,7 @@ class WaterSensors:
     # Setup 
 
     def ph_read_voltage():
-        #i2c = busio.I2C(board.SCL, board.SDA)
-        #ads = ADS.ADS1015(i2c,gain=16)
-        #print("with gain")
-        #channel = AnalogIn(ads, ADS.P0)
         
-
-        #buf = list()
-        #for i in range(10): # Take 10 samples
-        #    buf.append(channel.voltage)
-            
-        #buf.sort() # Sort samples and discard highest and lowest
-        #buf = buf[2:-2]
-        #avg = (sum(map(float,buf))/6) # Get average value from remaining 6
         adc = Adafruit_ADS1x15.ADS1015()
         value = adc.read_adc(0,gain=2,data_rate=3300)
         phDiff = 0.006
@@ -60,23 +48,10 @@ class WaterSensors:
         print(value)
         print(avg)
         return round(avg,2)
-        #return round(avg,2)
+
     
     def humidity_voltage():
-        #i2c = busio.I2C(board.SCL, board.SDA)
-        #ads = ADS.ADS1015(i2c)
-        #channel = AnalogIn(ads, ADS.P3)
-        #buf = list()
-        #print("Humidity voltage:")
-        #print(channel.voltage)
-        #for i in range(10): # Take 10 samples
-        #    buf.append(channel.voltage)
-    
-        #buf.sort() # Sort samples and discard highest and lowest
-        #buf = buf[2:-2]
-        #avg = (sum(map(float,buf))/6) # Get average value from remaining 6
-
-        #return round(avg,2)
+       
         adc = Adafruit_ADS1x15.ADS1015()
         value = adc.read_adc(3,gain=1)
         analog_voltage = value*(4.096/2047)
