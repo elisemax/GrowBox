@@ -53,8 +53,7 @@ class Adapter:
         self.data['controlUnitId'] = self.controlUnitId
     def getTime(self):
         localtime = time.localtime()  
-        #result = time.strftime("%H:%M:%S",localtime)
-        print(localtime)
-        self.data['createdAt'] = localtime
+        result = time.strftime("%H:%M:%S",localtime)
+        self.data['createdAt'] = result
 
         
