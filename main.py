@@ -38,7 +38,7 @@ while(True):
         systemGrow.tdsUpdate()
         systemGrow.humUpdate()
         systemGrow.phUpdate()
-        systemGrow.waterLevel()
+     
         #bluetooth.bluetooth.receiveMessages()
         #print(rGet.status_code)
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
