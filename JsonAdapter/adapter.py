@@ -16,7 +16,7 @@ class Adapter:
         self.temperature = self.data['temperature']
         self.ph = self.data["pH"]
         self.ec = self.data['ppm']
-        self.hum = self.data['soilHumidityPerc']
+        #self.hum = self.data['soilHumidityPerc']
         self.ledStatus = self.data['lightsRealStatus']
         self.controlUnitId = "farm-"+service.macAdress.get_mac_adress()
     def Json_Obj(self):
