@@ -54,6 +54,8 @@ class WaterSensors:
         #avg = (sum(map(float,buf))/6) # Get average value from remaining 6
         adc = Adafruit_ADS1x15.ADS1015()
         value = adc.read_adc(0,gain=1)
+        print("PH BIT")
+        print(value)
         analog_voltage = value*(4.096/2047)
         avg = analog_voltage
         return round(avg,2)
@@ -82,14 +84,14 @@ class WaterSensors:
 
     def ph_get_ph():
         voltage = WaterSensors.ph_read_voltage()
-        print("PH voltahe:")
+        print("PH voltage:")
         print(voltage)
         return 21.55509299 - (5.641509 * voltage)
 
     def ec_get_ec():
         sensorValue = WaterSensors.ec_read_voltage()
-        print("EC sensor value:")
-        print(sensorValue)
+       # print("EC sensor value:")
+       # print(sensorValue)
         if (sensorValue==0.0):
             return 0
         Voltage = (5/1024.0)*sensorValue;   # Convert analog reading to Voltage
