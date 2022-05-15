@@ -16,6 +16,7 @@ class Adapter:
         self.ph = self.data["pH"]
         self.ec = self.data['ppm']
         self.hum = self.data['humidityPerc']
+        self.ledStatus = self.data['lightsRealStatus']
     def Json_Obj(self):
         with open(self.json_path) as f:
             data = json.load(f)
