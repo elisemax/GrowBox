@@ -57,6 +57,7 @@ class WaterSensors:
         phDiff = 0.006
         k = 5.05
         avg = value *phDiff *k
+        print(value)
         print(avg)
         return round(avg,2)
         #return round(avg,2)
