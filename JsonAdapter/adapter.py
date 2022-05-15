@@ -15,7 +15,7 @@ class Adapter:
         self.temperature = self.data['temperature']
         self.ph = self.data["pH"]
         self.ec = self.data['ppm']
-        self.hum = self.data['humidityPerc']
+        self.hum = self.data['soilHumidityPerc']
         self.ledStatus = self.data['lightsRealStatus']
     def Json_Obj(self):
         with open(self.json_path) as f:
@@ -45,6 +45,6 @@ class Adapter:
     def tdsUpdate(self):
         self.data['ppm'] = WaterSensors.ec_get_ec()
     def humUpdate(self):
-        self.data['hum'] = WaterSensors.humidityGetValue()
+        self.data['soilHumidityPerc'] = WaterSensors.humidityGetValue()
 
         
