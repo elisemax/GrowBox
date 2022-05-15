@@ -5,6 +5,7 @@ import sensors.led
 import sensors.phSens
 import sensors.ecSens
 import sensors.waterSensors
+import service.macAdress
 from sensors.waterSensors import WaterSensors
 
 
@@ -17,6 +18,7 @@ class Adapter:
         self.ec = self.data['ppm']
         self.hum = self.data['soilHumidityPerc']
         self.ledStatus = self.data['lightsRealStatus']
+        self.controlUnitId = "farm-"+service.macAdress.get_mac_adress()
     def Json_Obj(self):
         with open(self.json_path) as f:
             data = json.load(f)
@@ -47,5 +49,7 @@ class Adapter:
         self.data['ppm'] = WaterSensors.ec_get_ec()
     def humUpdate(self):
         self.data['soilHumidityPerc'] = WaterSensors.humidityGetValue()
+    def idUpdate(self):
+        self.datap['controlUnitId'] = self.controlUnitId
 
         
