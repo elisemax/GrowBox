@@ -35,23 +35,21 @@ class Adapter:
         self.temperature = self.data['temperature']
         return self.temperature
     def ledTurnOff(self):
-        self.data['ledStatus']['ledOn'] = sensors.led.LedOff()
+        self.data['lightsRealStatus'] = sensors.led.LedOff()
     def ledTurnOn(self):
-        self.data['ledStatus']['ledOn'] = sensors.led.LedOn()
+        self.data['lightsRealStatus'] = sensors.led.LedOn()
     def get_ledStatus(self):
         self.ledStatus = self.data['ledStatus']['ledOn']
         sensors.led.ledControl(self.ledStatus)
         return self.ledStatus
     def ledUpdateStatus(self,ledX):
         jsonLedStatus = json.loads(ledX)
-        self.data['ledStatus']['ledOn'] = jsonLedStatus['ledOn']
+        self.data['lightsRealStatus'] = jsonLedStatus['lightsRealStatus']
     def phUpdate(self):
         self.data["pH"] = WaterSensors.ph_get_ph()
     def tdsUpdate(self):
-        self.data['eC'] = WaterSensors.ec_get_ec()
+        self.data['ppm'] = WaterSensors.ec_get_ec()
     def humUpdate(self):
         self.data['hum'] = WaterSensors.humidityGetValue()
-    def waterLevel(self):
-        self.data['waterLevel'] = sensors.waterSensors.waterLevelControl()
 
         
