@@ -14,7 +14,7 @@ import git
 systemGrow = JsonAdapter.adapter.Adapter()
 systemGrow.idUpdate()
 while(True): 
-    try:  
+    #try:  
 
 
 
@@ -38,9 +38,9 @@ while(True):
         #g.pull()
     
         
-    except Exception:
-        print(Exception)
-        pass
+    #except Exception:
+    #    print(Exception)
+    #    pass
 
      
         
