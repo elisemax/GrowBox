@@ -50,6 +50,6 @@ class Adapter:
     def humUpdate(self):
         self.data['soilHumidityPerc'] = WaterSensors.humidityGetValue()
     def idUpdate(self):
-        self.datap['controlUnitId'] = self.controlUnitId
+        self.data['controlUnitId'] = self.controlUnitId
 
         
