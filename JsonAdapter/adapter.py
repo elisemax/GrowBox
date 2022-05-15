@@ -54,6 +54,7 @@ class Adapter:
     def getTime(self):
         localtime = time.localtime()  
         #result = time.strftime("%H:%M:%S",localtime)
+        print(localtime)
         self.data['createdAt'] = localtime
 
         
