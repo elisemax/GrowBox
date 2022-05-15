@@ -4,11 +4,11 @@ import board
 import busio
 import time
 import sys
-import adafruit_ads1x15.ads1015 as ADS
-from adafruit_ads1x15.analog_in import AnalogIn
+#import adafruit_ads1x15.ads1015 as ADS
+#from adafruit_ads1x15.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 #some code
-#import Adafruit_ADS1x15
+import Adafruit_ADS1x15
 #adc = Adafruit_ADS1x15.ADS1115()
 #value = adc.read_adc(0,gain=1)
 #analog_voltage = value*(4.096/2047)
@@ -20,52 +20,64 @@ class WaterSensors:
     b = 21.55509299
 
     def ec_read_voltage():
-        i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1015(i2c)
-        channel = AnalogIn(ads, ADS.P2)
-        buf = list()
+        #i2c = busio.I2C(board.SCL, board.SDA)
+        #ads = ADS.ADS1015(i2c)
+        #channel = AnalogIn(ads, ADS.P2)
+        #buf = list()
         
-        for i in range(10): # Take 10 samples
-            buf.append(channel.voltage)
-        buf.sort() # Sort samples and discard highest and lowest
-        buf = buf[2:-2]
-        avg = (sum(map(float,buf))/6) # Get average value from remaining 6
-    
+        #for i in range(10): # Take 10 samples
+        #    buf.append(channel.voltage)
+        #buf.sort() # Sort samples and discard highest and lowest
+        #buf = buf[2:-2]
+        #avg = (sum(map(float,buf))/6) # Get average value from remaining 6
+        adc = Adafruit_ADS1x15.ADS1015()
+        value = adc.read_adc(2,gain=1)
+        analog_voltage = value*(4.096/2047)
+        avg = analog_voltage
         return round(avg,2)
 
     # Setup 
 
     def ph_read_voltage():
-        i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1015(i2c,gain=16)
-        print("with gain")
-        channel = AnalogIn(ads, ADS.P0)
+        #i2c = busio.I2C(board.SCL, board.SDA)
+        #ads = ADS.ADS1015(i2c,gain=16)
+        #print("with gain")
+        #channel = AnalogIn(ads, ADS.P0)
         
 
-        buf = list()
-        for i in range(10): # Take 10 samples
-            buf.append(channel.voltage)
+        #buf = list()
+        #for i in range(10): # Take 10 samples
+        #    buf.append(channel.voltage)
             
-        buf.sort() # Sort samples and discard highest and lowest
-        buf = buf[2:-2]
-        avg = (sum(map(float,buf))/6) # Get average value from remaining 6
-    
+        #buf.sort() # Sort samples and discard highest and lowest
+        #buf = buf[2:-2]
+        #avg = (sum(map(float,buf))/6) # Get average value from remaining 6
+        adc = Adafruit_ADS1x15.ADS1015()
+        value = adc.read_adc(0,gain=1)
+        analog_voltage = value*(4.096/2047)
+        avg = analog_voltage
         return round(avg,2)
+        #return round(avg,2)
     
     def humidity_voltage():
-        i2c = busio.I2C(board.SCL, board.SDA)
-        ads = ADS.ADS1015(i2c)
-        channel = AnalogIn(ads, ADS.P3)
-        buf = list()
-        print("Humidity voltage:")
-        print(channel.voltage)
-        for i in range(10): # Take 10 samples
-            buf.append(channel.voltage)
+        #i2c = busio.I2C(board.SCL, board.SDA)
+        #ads = ADS.ADS1015(i2c)
+        #channel = AnalogIn(ads, ADS.P3)
+        #buf = list()
+        #print("Humidity voltage:")
+        #print(channel.voltage)
+        #for i in range(10): # Take 10 samples
+        #    buf.append(channel.voltage)
     
-        buf.sort() # Sort samples and discard highest and lowest
-        buf = buf[2:-2]
-        avg = (sum(map(float,buf))/6) # Get average value from remaining 6
-    
+        #buf.sort() # Sort samples and discard highest and lowest
+        #buf = buf[2:-2]
+        #avg = (sum(map(float,buf))/6) # Get average value from remaining 6
+
+        #return round(avg,2)
+        adc = Adafruit_ADS1x15.ADS1015()
+        value = adc.read_adc(3,gain=1)
+        analog_voltage = value*(4.096/2047)
+        avg = analog_voltage
         return round(avg,2)
 
     def ph_get_ph():
