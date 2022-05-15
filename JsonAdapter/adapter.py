@@ -39,6 +39,7 @@ class Adapter:
         return self.ledStatus
     def ledUpdateStatus(self,ledX):
         jsonLedStatus = json.loads(ledX)
+        print(jsonLedStatus)
         self.data['lightsRealStatus'] = jsonLedStatus['lightsRealStatus']
     def phUpdate(self):
         self.data["pH"] = WaterSensors.ph_get_ph()
