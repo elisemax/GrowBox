@@ -13,7 +13,7 @@ class Adapter:
         self.json_path = 'JsonAdapter/data.json'
         self.data = self.Json_Obj()
         self.temperature = self.data['temperature']
-        self.ph = self.data["ph"]
+        self.ph = self.data["pH"]
         self.ec = self.data['ppm']
         self.hum = self.data['humidityPerc']
     def Json_Obj(self):
