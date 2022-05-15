@@ -13,14 +13,9 @@ class Adapter:
         self.json_path = 'JsonAdapter/data.json'
         self.data = self.Json_Obj()
         self.temperature = self.data['temperature']
-        self.ledStatus = self.data['ledStatus']['ledOn']
-        self.ledTimerOn = self.data['ledStatus']['lightsOn']
-        self.ledTimerOff = self.data['ledStatus']['lightsOff']
-        self.timer = 3.12
         self.ph = self.data["ph"]
-        self.ec = self.data['ec']
-        self.hum = self.data['hum']
-        self.waterLvl = self.data['waterLevel']
+        self.ec = self.data['ppm']
+        self.hum = self.data['humidityPerc']
     def Json_Obj(self):
         with open(self.json_path) as f:
             data = json.load(f)
@@ -29,7 +24,6 @@ class Adapter:
         with open(self.json_path,'w') as f:
             json.dump(self.data,f)
     def temperatureUpdate(self):
-        #self.temperature = sensors.temperature.get_temperature1()
         self.data['temperature'] = sensors.temperature.get_temperature()
     def get_temperature(self):
         self.temperature = self.data['temperature']
