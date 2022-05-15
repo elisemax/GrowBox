@@ -53,8 +53,8 @@ class WaterSensors:
         #buf = buf[2:-2]
         #avg = (sum(map(float,buf))/6) # Get average value from remaining 6
         adc = Adafruit_ADS1x15.ADS1015()
-        value = adc.read_adc(0,gain=1)
-        analog_voltage = value*(4.096/4096)
+        value = adc.read_adc(0,gain=2)
+        analog_voltage = 4096*2.096/5
         avg = analog_voltage
         return round(avg,2)
         #return round(avg,2)
