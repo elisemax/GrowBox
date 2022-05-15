@@ -7,7 +7,7 @@ import sensors.ecSens
 import sensors.waterSensors
 import service.macAdress
 from sensors.waterSensors import WaterSensors
-import time
+from datetime import datetime
 
 class Adapter:
     def __init__(self):
@@ -48,12 +48,12 @@ class Adapter:
     def tdsUpdate(self):
         self.data['ppm'] = WaterSensors.ec_get_ec()
     def humUpdate(self):
-        self.data['soilHumidityPerc'] = WaterSensors.humidityGetValue()
+        #self.data['soilHumidityPerc'] = WaterSensors.humidityGetValue()
+        x=5
     def idUpdate(self):
         self.data['controlUnitId'] = self.controlUnitId
     def getTime(self):
-        localtime = time.localtime()  
-        result = time.strftime("%H:%M:%S",localtime)
-        self.data['createdAt'] = result
+        my_date = datetime.now()
+        self.data['createdAt'] = my_date
 
         
