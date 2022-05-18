@@ -38,7 +38,9 @@ class WaterSensors:
         phDiff = 0.006
         k = 5.05
         avg = value *phDiff -k
+        print("PH value")
         print(value)
+        print("ph avg")
         print(avg)
         return round(avg,2)
 
@@ -84,6 +86,7 @@ def waterLevelControl():
     buttonInput = 17
     GPIO.setup(buttonInput, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     buttonState = GPIO.input(buttonInput)
+    print("water level button state:")
     print(buttonState)
     if buttonState == True :
         return True
