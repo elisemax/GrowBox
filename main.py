@@ -30,7 +30,7 @@ while(True):
         systemGrow.tdsUpdate()
         systemGrow.humUpdate()
         systemGrow.phUpdate()
-        rGet = requests.get('http://192.168.0.10:8080/grow/status',json=systemGrow.Json_Obj())
+        #rGet = requests.get('http://192.168.0.10:8080/grow/status',json=systemGrow.Json_Obj())
 
         #systemGrow.getTime()
         #bluetooth.bluetooth.receiveMessages()
