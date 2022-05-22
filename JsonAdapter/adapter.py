@@ -55,5 +55,13 @@ class Adapter:
     def getTime(self):
         my_date = datetime.now()
         self.data['createdAt'] = my_date
-
-        
+    def createJsonObj(self,controlUnitId,lightsRealStatus,temperature,pH,ppm,createdAt):
+        jsonObj = {
+            "controlUnitId":controlUnitId,
+            "lightsRealStatus": lightsRealStatus, 
+            "temperature": temperature, 
+            "pH": pH, 
+            "ppm": ppm,
+            "createdAt":createdAt
+        }
+        return jsonObj

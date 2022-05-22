@@ -19,7 +19,7 @@ while(True):
     #try:  
 
         time.sleep(1)
-        rPut = requests.put('https://p5023.dev.inited.cz/api/test/farm-b8:27:eb:51:bd:cf',json=systemGrow.Json_Obj(),headers=headers)
+        
         #tJsonObj = rGet.text
         
 
@@ -33,17 +33,17 @@ while(True):
         systemGrow.humUpdate()
         systemGrow.phUpdate()
         #rGet = requests.get('http://192.168.0.10:8080/grow/status',json=systemGrow.Json_Obj())
-
+        systemGrow.createJsonObj(systemGrow.controlUnitId,systemGrow.get_ledStatus(),systemGrow.temperature,systemGrow.ph,systemGrow.ec,systemGrow.getTime())
         #systemGrow.getTime()
         #bluetooth.bluetooth.receiveMessages()
         #print(rGet.status_code)
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         #g.pull()
-    
+        rPut = requests.put('https://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId,json=systemGrow.Json_Obj(),headers=headers)
         
     #except Exception:
     #    print(Exception)
     #    pass
 
-     
+
         
