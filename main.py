@@ -2,6 +2,7 @@
 
 
 
+from email import header
 from email.utils import localtime
 import requests
 import JsonAdapter.adapter
@@ -13,14 +14,15 @@ import git
 
 systemGrow = JsonAdapter.adapter.Adapter()
 systemGrow.idUpdate()
+headers = {"accept":"application/json","Content-Type":"application/json; charset=utf-8"}
 while(True): 
     #try:  
 
-
-
         time.sleep(1)
-        #rPut = requests.put('https://p5023.dev.inited.cz/api/test/farm-b8:27:eb:51:bd:cf',json=systemGrow.Json_Obj())
+        rPut = requests.put('https://p5023.dev.inited.cz/api/test/farm-b8:27:eb:51:bd:cf',json=systemGrow.Json_Obj(),headers=headers)
         #tJsonObj = rGet.text
+        
+
         systemGrow.phUpdate()
         systemGrow.Json_Upd()
         systemGrow.temperatureUpdate()
