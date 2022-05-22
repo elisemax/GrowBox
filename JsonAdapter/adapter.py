@@ -35,7 +35,18 @@ class Adapter:
         self.data['lightsRealStatus'] = sensors.led.LedOff()
     def ledTurnOn(self):
         self.data['lightsRealStatus'] = sensors.led.LedOn()          
-    ###### ??? ######              
+    ###### ??? ######
+    def createJsonObj(self,controlUnitId,lightsRealStatus,temperature,pH,ppm,hum,createdAt):
+        jsonObj = {
+            "controlUnitId":controlUnitId,
+            "lightsRealStatus": lightsRealStatus, 
+            "temperature": temperature, 
+            "pH": pH, 
+            "ppm": ppm,
+            "hum":hum,
+            "createdAt":createdAt
+        }
+        return jsonObj               
     def temperatureUpdate(self):
         self.data['temperature'] = sensors.temperature.get_temperature()
         temperature = sensors.temperature.get_temperature()
@@ -75,14 +86,3 @@ class Adapter:
     @property
     def getLightsRealStatus(self):
         return self.ledStatus  
-    def createJsonObj(self,controlUnitId,lightsRealStatus,temperature,pH,ppm,hum,createdAt):
-        jsonObj = {
-            "controlUnitId":controlUnitId,
-            "lightsRealStatus": lightsRealStatus, 
-            "temperature": temperature, 
-            "pH": pH, 
-            "ppm": ppm,
-            "hum":hum,
-            "createdAt":createdAt
-        }
-        return jsonObj

@@ -38,7 +38,11 @@ while(True):
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         #g.pull()
         systemGrow = JsonAdapter.adapter.Adapter(False)
-        jsonObj = systemGrow.createJsonObj(systemGrow.controlUnitId,systemGrow.getLightsRealStatus,systemGrow.getTemperature,systemGrow.getPH,systemGrow.getPPM,systemGrow.getHum,systemGrow.getTime)
+        jsonObj = systemGrow.createJsonObj(systemGrow.controlUnitId,
+        systemGrow.getLightsRealStatus,
+        systemGrow.getTemperature,systemGrow.getPH,
+        systemGrow.getPPM,systemGrow.getHum,
+        systemGrow.getTime)
         rPut = requests.put('https://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId,json=jsonObj,headers=headers)
         
     #except Exception:
