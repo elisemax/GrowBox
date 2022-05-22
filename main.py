@@ -14,7 +14,7 @@ import git
 
 systemGrow = JsonAdapter.adapter.Adapter()
 systemGrow.idUpdate()
-headers = {"accept":"application/json","Content-Type":"application/json; charset=utf-8"}
+headers = {"accept":"application/json","Content-Type":"application/json;"}
 while(True): 
     #try:  
 
