@@ -7,7 +7,7 @@ class Led:
     @property
     def getLedStatus(self):
         return self.__ledStatus
-    def ledControl(self,On = self.ledStatus):
+    def ledControl(self,On = False):
         if On == True:
             print("True")
             self.LedOff()
