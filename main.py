@@ -5,10 +5,9 @@
 from email import header
 from email.utils import localtime
 import requests
-import JsonAdapter.adapter
+import JsonAdapter.adapter as ad
 import time
 import git
-
 
 
 
@@ -17,6 +16,8 @@ import git
 headers = {"accept":"application/json","Content-Type":"application/json;"}
 while(True): 
     #try:  
+
+        systemGrow = ad.Adapter(False)
 
         time.sleep(1)
         #tJsonObj = rGet.text
@@ -37,7 +38,7 @@ while(True):
         #print(rGet.status_code)
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         #g.pull()
-        systemGrow = JsonAdapter.adapter.Adapter(False)
+        
         jsonObj = systemGrow.createJsonObj(systemGrow.controlUnitId,
         systemGrow.getLightsRealStatus,
         systemGrow.getTemperature,systemGrow.getPH,
