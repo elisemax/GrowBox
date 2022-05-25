@@ -11,11 +11,11 @@ class Led:
         if On == True:
             print("True")
             self.LedOff()
-            return "true"
+            return True
         if On == False:
             print("False")
             self.LedOn()
-            return "false"
+            return False
     def LedOff(self):
         GPIO.setmode(GPIO.BCM)
         OutputPin1 = 13
