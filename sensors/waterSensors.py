@@ -58,10 +58,11 @@ class WaterSensors:
         max = 0.8
         abs = voltage - max
 
-        result = (voltage-max)/(min-max)
+        num = (voltage-max)/(min-max)
+        result = round((num-1.0)*(-1)*100,2)
         print("humidity")
         print(result)
-        return round((result-1.0)*(-1)*100,2)
+        return result
 
 
     def ph_get_ph():
