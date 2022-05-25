@@ -45,6 +45,7 @@ while(True):
         systemGrow.getPPM,systemGrow.getHum,
         systemGrow.getTime)
         rPut = requests.put('https://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId,json=jsonObj,headers=headers,verify=False)
+        pritn('https://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId)
         
     #except Exception:
     #    print(Exception)
