@@ -56,7 +56,7 @@ class Adapter:
         x = ledStatus.ledControl()
         return x
       #  ledStatus = sensors.led.Led.ledControl(lightsRealStatus)
-        return ledStatus
+       # return ledStatus
     def phUpdate(self):
       #  self.data["pH"] = WaterSensors.ph_get_ph()
         return WaterSensors.ph_get_ph()
