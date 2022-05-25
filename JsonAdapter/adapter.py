@@ -46,6 +46,7 @@ class Adapter:
           #  "hum":hum,
            "createdAt":createdAt
         }
+        print(jsonObj)
         return jsonObj               
     def temperatureUpdate(self):
       #  self.data['temperature'] = sensors.temperature.get_temperature()
