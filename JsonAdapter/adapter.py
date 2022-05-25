@@ -42,9 +42,9 @@ class Adapter:
             "lightsRealStatus": lightsRealStatus, 
             "temperature": temperature, 
             "pH": pH, 
-            "ppm": ppm,
-            "hum":hum,
-            "createdAt":createdAt
+         #   "ppm": ppm,
+          #  "hum":hum,
+           # "createdAt":createdAt
         }
         return jsonObj               
     def temperatureUpdate(self):
