@@ -46,7 +46,7 @@ class Adapter:
          #   "ppm": ppm,
           #  "hum":hum,
         #"createdAt":createdAt
-           "createdAt": "2022-05-13T09:51:35.000Z"
+          # "createdAt": "2022-05-13T09:51:35.000Z"
         }
         print(jsonObj)
         return jsonObj               
