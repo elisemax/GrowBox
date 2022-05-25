@@ -18,7 +18,7 @@ class Adapter:
         self.ec = self.ecUpdate()
         self.hum = self.humUpdate()
         self.ledStatus = self.getLedStatus(lightsRealStatus)
-        self.controlUnitId = "FRM-"+service.macAdress.get_mac_adress()
+        self.controlUnitId = "FRMZZZZ-"+service.macAdress.get_mac_adress()
         self.waterlevel = self.waterLevel()
     ###### ??? ######    
     # def Json_Obj(self):
