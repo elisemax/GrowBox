@@ -38,10 +38,7 @@ class WaterSensors:
         phDiff = 0.006
         k = 5.05
         avg = value *phDiff -k
-        print("PH value")
-        print(value)
-        print("ph avg")
-        print(avg)
+        
         return round(avg,2)
 
     
@@ -62,6 +59,8 @@ class WaterSensors:
         abs = voltage - max
 
         result = (voltage-max)/(min-max)
+        print("humidity")
+        print(result)
         return round((result-1.0)*(-1)*100,2)
 
 
@@ -71,13 +70,11 @@ class WaterSensors:
 
     def ec_get_ec():
         sensorValue = WaterSensors.ec_read_voltage()
-        print("EC sensor value:")
-        print(sensorValue)
+    
         if (sensorValue==0.0):
             return 0
         Voltage = (5/1024.0)*sensorValue;   # Convert analog reading to Voltage
-        print("EC voltage:")
-        print(Voltage)
+        
         return round(((133.42/Voltage*Voltage*Voltage - 255.86*Voltage*Voltage + 857.39*Voltage)*0.5)*1000/4,2); # Convert voltage value to TDS value
 
 def waterLevelControl():

@@ -13,7 +13,7 @@ import git
 
 #systemGrow = JsonAdapter.adapter.Adapter(False)
 #systemGrow.idUpdate()
-headers = {"Content-Type":"application/json;"}
+headers = {"accept":"application/json","Content-Type":"application/json;"}
 while(True): 
     #try:  
 
