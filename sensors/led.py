@@ -16,7 +16,7 @@ class Led:
             print("False")
             self.LedOn()
             return "false"
-    def LedOff():
+    def LedOff(self):
         GPIO.setmode(GPIO.BCM)
         OutputPin1 = 13
         OutputPin2 = 19
@@ -26,7 +26,7 @@ class Led:
         GPIO.output(OutputPin1, GPIO.HIGH)
         GPIO.output(OutputPin2, GPIO.HIGH)
         print("LedOn")
-    def LedOn():
+    def LedOn(self):
         GPIO.setmode(GPIO.BCM)
         OutputPin1 = 13
         OutputPin2 = 19
