@@ -73,7 +73,7 @@ class Adapter:
     def getTime(self):
         my_date = datetime.now()
        # self.data['createdAt'] = my_date
-        return (str)my_date
+        return str(my_date)
     @property
     def getTemperature(self):
         return self.temperature
