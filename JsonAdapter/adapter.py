@@ -48,28 +48,28 @@ class Adapter:
         }
         return jsonObj               
     def temperatureUpdate(self):
-        self.data['temperature'] = sensors.temperature.get_temperature()
+      #  self.data['temperature'] = sensors.temperature.get_temperature()
         temperature = sensors.temperature.get_temperature()
         return temperature
     def getLedStatus(self,lightsRealStatus):
         ledStatus = sensors.led.ledControl(lightsRealStatus)
         return ledStatus
     def phUpdate(self):
-        self.data["pH"] = WaterSensors.ph_get_ph()
+      #  self.data["pH"] = WaterSensors.ph_get_ph()
         return WaterSensors.ph_get_ph()
     def ecUpdate(self):
-        self.data['ppm'] = WaterSensors.ec_get_ec()
+      #  self.data['ppm'] = WaterSensors.ec_get_ec()
         return WaterSensors.ec_get_ec()
     def humUpdate(self):
-        self.data['soilHumidityPerc'] = WaterSensors.humidityGetValue()
+       # self.data['soilHumidityPerc'] = WaterSensors.humidityGetValue()
         hum = WaterSensors.humidityGetValue()
         return hum 
     def idUpdate(self):
-        self.data['controlUnitId'] = self.controlUnitId
+      #  self.data['controlUnitId'] = self.controlUnitId
     @property
     def getTime(self):
         my_date = datetime.now()
-        self.data['createdAt'] = my_date
+       # self.data['createdAt'] = my_date
         return my_date
     @property
     def getTemperature(self):
