@@ -12,7 +12,7 @@ from datetime import datetime
 class Adapter:
     def __init__(self,lightsRealStatus):
         self.json_path = 'JsonAdapter/data.json'
-        self.data = self.Json_Obj()
+      #  self.data = self.Json_Obj()
         self.temperature = self.temperatureUpdate()
         self.ph = self.phUpdate()
         self.ec = self.ecUpdate()
