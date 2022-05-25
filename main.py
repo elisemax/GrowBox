@@ -47,6 +47,9 @@ while(True):
         rPut = requests.post('http://p5023.dev.inited.cz/api/test/',json=jsonObj,headers=headers)
         print('https://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId)
         
+        print(str(rPut.json))
+        
+        
     #except Exception:
     #    print(Exception)
     #    pass
