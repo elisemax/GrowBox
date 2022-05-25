@@ -78,17 +78,17 @@ class WaterSensors:
         
         return round(((133.42/Voltage*Voltage*Voltage - 255.86*Voltage*Voltage + 857.39*Voltage)*0.5)*1000/4,2); # Convert voltage value to TDS value
 
-def waterLevelControl():
-    GPIO.setwarnings(False)
-    GPIO.setmode(GPIO.BCM)
-    buttonInput = 17
-    GPIO.setup(buttonInput, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    buttonState = GPIO.input(buttonInput)
-    print("water level button state:")
-    print(buttonState)
-    if buttonState == True :
-        return True
-    else:
-        return False
-    
+    def waterLevelControl():
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BCM)
+        buttonInput = 17
+        GPIO.setup(buttonInput, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        buttonState = GPIO.input(buttonInput)
+        print("water level button state:")
+        print(buttonState)
+        if buttonState == True :
+            return True
+        else:
+            return False
+        
 

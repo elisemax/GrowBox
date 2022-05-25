@@ -19,6 +19,7 @@ class Adapter:
         self.hum = self.humUpdate()
         self.ledStatus = self.getLedStatus(lightsRealStatus=False)
         self.controlUnitId = "FRM-"+service.macAdress.get_mac_adress()
+        self.waterlevel = self.waterLevel()
     ###### ??? ######    
     # def Json_Obj(self):
     #     with open(self.json_path) as f:
@@ -72,6 +73,10 @@ class Adapter:
         return hum 
    # def idUpdate(self):
       #  self.data['controlUnitId'] = self.controlUnitId
+    
+    def waterLevel(self):
+        waterLevel = WaterSensors.waterLevelControl()
+        return waterLevel
     @property
     def getTime(self):
         my_date = datetime.now()
