@@ -18,7 +18,7 @@ class Adapter:
         self.ec = self.ecUpdate()
         self.hum = self.humUpdate()
         self.ledStatus = self.getLedStatus(lightsRealStatus=False)
-        self.controlUnitId = "farm-"+service.macAdress.get_mac_adress()
+        self.controlUnitId = "FRM-"+service.macAdress.get_mac_adress()
     ###### ??? ######    
     # def Json_Obj(self):
     #     with open(self.json_path) as f:
