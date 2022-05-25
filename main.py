@@ -45,8 +45,8 @@ while(True):
         systemGrow.getPPM,systemGrow.getHum,
         systemGrow.getTime)
         rPut = requests.post('http://p5023.dev.inited.cz/api/test/',json=jsonObj,headers=headers)
-        print('https://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId)
-        
+        print('http://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId)
+        print(jsonObj)
         print(str(rPut.json))
         
         
