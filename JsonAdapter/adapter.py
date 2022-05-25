@@ -17,7 +17,7 @@ class Adapter:
         self.ph = self.phUpdate()
         self.ec = self.ecUpdate()
         self.hum = self.humUpdate()
-        self.ledStatus = self.getLedStatus(lightsRealStatus=False)
+        self.ledStatus = self.getLedStatus(lightsRealStatus)
         self.controlUnitId = "FRM-"+service.macAdress.get_mac_adress()
         self.waterlevel = self.waterLevel()
     ###### ??? ######    
