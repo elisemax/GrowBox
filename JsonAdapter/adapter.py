@@ -20,21 +20,21 @@ class Adapter:
         self.ledStatus = self.getLedStatus(lightsRealStatus=False)
         self.controlUnitId = "farm-"+service.macAdress.get_mac_adress()
     ###### ??? ######    
-    def Json_Obj(self):
-        with open(self.json_path) as f:
-            data = json.load(f)
-            return data
-    def Json_Upd(self):
-        with open(self.json_path,'w') as f:
-            json.dump(self.data,f)
-    def ledUpdateStatus(self,ledX):
-        jsonLedStatus = json.loads(ledX)
-        print(jsonLedStatus)
-        self.data['lightsRealStatus'] = jsonLedStatus['lightsRealStatus']
-    def ledTurnOff(self):
-        self.data['lightsRealStatus'] = sensors.led.LedOff()
-    def ledTurnOn(self):
-        self.data['lightsRealStatus'] = sensors.led.LedOn()          
+    # def Json_Obj(self):
+    #     with open(self.json_path) as f:
+    #         data = json.load(f)
+    #         return data
+    # def Json_Upd(self):
+    #     with open(self.json_path,'w') as f:
+    #         json.dump(self.data,f)
+    # def ledUpdateStatus(self,ledX):
+    #     jsonLedStatus = json.loads(ledX)
+    #     print(jsonLedStatus)
+    #     self.data['lightsRealStatus'] = jsonLedStatus['lightsRealStatus']
+    # def ledTurnOff(self):
+    #     self.data['lightsRealStatus'] = sensors.led.LedOff()
+    # def ledTurnOn(self):
+    #     self.data['lightsRealStatus'] = sensors.led.LedOn()          
     ###### ??? ######
     def createJsonObj(self,controlUnitId,lightsRealStatus,temperature,pH,ppm,hum,createdAt):
         jsonObj = {
