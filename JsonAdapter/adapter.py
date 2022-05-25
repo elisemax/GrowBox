@@ -53,7 +53,8 @@ class Adapter:
         return temperature
     def getLedStatus(self,lightsRealStatus):
         ledStatus = sensors.led.Led(lightsRealStatus)
-        ledStatus.ledControl()
+        x = ledStatus.ledControl()
+        return x
       #  ledStatus = sensors.led.Led.ledControl(lightsRealStatus)
         return ledStatus
     def phUpdate(self):
