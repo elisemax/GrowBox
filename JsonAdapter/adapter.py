@@ -64,7 +64,7 @@ class Adapter:
        # self.data['soilHumidityPerc'] = WaterSensors.humidityGetValue()
         hum = WaterSensors.humidityGetValue()
         return hum 
-    def idUpdate(self):
+   # def idUpdate(self):
       #  self.data['controlUnitId'] = self.controlUnitId
     @property
     def getTime(self):
