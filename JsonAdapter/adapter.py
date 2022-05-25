@@ -44,7 +44,7 @@ class Adapter:
             "pH": pH, 
          #   "ppm": ppm,
           #  "hum":hum,
-           # "createdAt":createdAt
+           "createdAt":createdAt
         }
         return jsonObj               
     def temperatureUpdate(self):
