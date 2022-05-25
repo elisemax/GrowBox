@@ -17,7 +17,7 @@ headers = {"accept":"application/json","Content-Type":"application/json;"}
 while(True): 
     #try:  
 
-        systemGrow = ad.Adapter(True)
+        systemGrow = ad.Adapter(False)
 
         time.sleep(1)
         #tJsonObj = rGet.text
@@ -44,7 +44,7 @@ while(True):
         systemGrow.getTemperature,systemGrow.getPH,
         systemGrow.getPPM,systemGrow.getHum,
         systemGrow.getTime)
-        rPut = requests.post('http://p5023.dev.inited.cz/api/test/',json=jsonObj,headers=headers)
+        rPut = requests.post('http://p5023.dev.inited.cz/api/test/',data=jsonObj,headers=headers)
         print('http://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId)
         print(jsonObj)
         print(str(rPut.json))
