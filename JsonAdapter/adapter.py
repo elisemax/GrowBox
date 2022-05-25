@@ -50,7 +50,8 @@ class Adapter:
           # "createdAt": "2022-05-13T09:51:35.000Z"
         }
         print(jsonObj)
-        x = json.dumps(jsonObj,indent=4)
+        #x = json.dumps(jsonObj,indent=4)
+        x = jsonObj.json()
         return x            
     def temperatureUpdate(self):
       #  self.data['temperature'] = sensors.temperature.get_temperature()

@@ -17,7 +17,7 @@ headers = {"accept":"application/json","Content-Type":"application/json;"}
 while(True): 
     #try:  
 
-        systemGrow = ad.Adapter(False)
+        systemGrow = ad.Adapter(True)
 
         time.sleep(1)
         #tJsonObj = rGet.text
