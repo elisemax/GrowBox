@@ -19,7 +19,7 @@ class Bluetoosh:
 #   client_sock.close()
 #   server_sock.close()
     def receiveMessages(self):
-        hostMACAddress = 'B8:27:EB:C9:EF:55' 
+        hostMACAddress = 'HO:NZ:AA:HH:UU:II' 
         port = 3
         backlog = 1
         size = 1024
