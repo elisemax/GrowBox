@@ -6,7 +6,7 @@ from email import header
 from email.utils import localtime
 import requests
 import JsonAdapter.adapter as ad
-import wifiActivator.bluetooth as bt
+import wifi.bluetoosh as bt
 import time
 import git
 
@@ -19,9 +19,9 @@ while(True):
     #try:  
 
         #systemGrow = ad.Adapter(False)
-        bluetooth = bluetooth.bluetooth()
+        
 
-        time.sleep(5)
+        
         #tJsonObj = rGet.text
 
         #systemGrow.phUpdate()
@@ -37,6 +37,7 @@ while(True):
         
         #systemGrow.getTime()
         bt.receiveMessages()
+        time.sleep(5)
         #print(rGet.status_code)
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         #g.pull()
