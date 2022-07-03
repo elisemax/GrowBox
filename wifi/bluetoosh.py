@@ -24,6 +24,7 @@ class Bluetoosh:
         backlog = 1
         size = 1024
         s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+        bluetooth.advertise_service(s,'hui', hostMACAddress)
         s.bind((hostMACAddress, port))
         s.listen(backlog)
         try:
