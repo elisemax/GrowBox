@@ -27,6 +27,7 @@ class Bluetoosh:
         s.bind((hostMACAddress, port))
         s.listen(backlog)
         try:
+            print('waitong for bluetooth connection..')
             client, clientInfo = s.accept()
             while 1:
                 data = client.recv(size)
