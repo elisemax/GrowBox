@@ -56,7 +56,8 @@ class Bluetoosh:
                     print(name)
                     print(password)
                     #os.system('iwconfig ' + interface + ' essid ' + name + ' key ' + password)
-        except:	
+        except Exception as e :	
             print("Closing socket")
+            print(e)
             client.close()
             s.close()
