@@ -1,5 +1,6 @@
 
 import bluetooth
+import os
 class Bluetoosh:
 # def receiveMessages():
 #   server_sock=bluetooth.BluetoothSocket( bluetooth.RFCOMM )
@@ -27,6 +28,7 @@ class Bluetoosh:
         s.bind((hostMACAddress, port))
         s.listen(backlog)
         bluetooth.advertise_service(s,'hui', '1e0ca4ea-299d-4335-93eb-27fcfe7fa848')
+        os.system('sudo hciconfig hci0 piscan')
         try:
             print('waitong for bluetooth connection..')
             client, clientInfo = s.accept()
