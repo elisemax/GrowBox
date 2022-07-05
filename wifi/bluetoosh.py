@@ -32,16 +32,16 @@ class Bluetoosh:
         os.system('sudo hciconfig hci0 piscan')
         try:
             print('started connecting')
-            #client, address = s.accept()
+            #client = s.accept()
             print('client accepted')
             while 1:
                 print('waitong for data...')
-                data = client.recv(size)
+                data = s.recv(size)
                 if (data):
                     print("Polu4ili data po bluetooth")
                     print(data)
-                    client.send(data) # Echo back to client
-                    client.send('Otpravili data nazad')
+                    s.send(data) # Echo back to client
+                    s.send('Otpravili data nazad')
                     #interface = 'wlan0'
                     #name = ‘Wifi’
                     #password = ‘password’
