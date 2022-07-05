@@ -26,22 +26,23 @@ class Bluetoosh:
         size = 1024
         s = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
         s.bind((hostMACAddress, port))
-       # s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.listen(backlog)
-     #   bluetooth.advertise_service(s,'hui', '1e0ca4ea-299d-4335-93eb-27fcfe7fa848')
+        #bluetooth.advertise_service(s,'hui', '1e0ca4ea-299d-4335-93eb-27fcfe7fa848')
         os.system('sudo hciconfig hci0 piscan')
         try:
             print('started connecting')
-            #client = s.accept()
+            client = s.accept()
             print('client accepted')
             while 1:
                 print('waitong for data...')
-                data = s.recv(size)
+                data = client.recv(size)
+                print('data was get')
                 if (data):
                     print("Polu4ili data po bluetooth")
                     print(data)
-                    s.send(data) # Echo back to client
-                    s.send('Otpravili data nazad')
+                    client.send(data) # Echo back to client
+                    client.send('Otpravili data nazad')
                     #interface = 'wlan0'
                     #name = ‘Wifi’
                     #password = ‘password’
