@@ -21,7 +21,7 @@ class Bluetoosh:
 #   server_sock.close()
     def receiveMessages(self):
         hostMACAddress = 'B8:27:EB:C9:EF:55'
-        port = 3
+        port = 2
         backlog = 1
         size = 1024
         s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
