@@ -55,10 +55,12 @@ class Bluetoosh:
                     password = parts[1]
                     print(name)
                     print(password)
-                    #os.system('iwconfig ' + interface + ' essid ' + name + ' key ' + password)
-                    os.system('sed -c -i "s/\($ssid *= *\).*/\1$name/" $wpa_supplicant.conf')
-                    os.system('sed -c -i "s/\($psk *= *\).*/\1$password/" $wpa_supplicant.conf')
-                    os.system('reboot')
+                    os.system('sudo iwconfig ' + interface + ' essid ' + name + ' key ' + password)
+                    # os.system('sed -c -i "s/\($ssid *= *\).*/\1$name/" $wpa_supplicant.conf')
+                    # os.system('sed -c -i "s/\($psk *= *\).*/\1$password/" $wpa_supplicant.conf')
+                    # os.system('sed -c -i "s/\($key_mgmt *= *\).*/\1$WPA-PSK/" $wpa_supplicant.conf')
+                    # os.system('reboot')
+
             
         except Exception as e :	
             print("Closing socket")
