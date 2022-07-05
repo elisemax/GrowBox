@@ -1,5 +1,5 @@
 
-import bluetooth
+import socket
 import os
 class Bluetoosh:
 # def receiveMessages():
@@ -24,7 +24,7 @@ class Bluetoosh:
         port = 2
         backlog = 1
         size = 1024
-        s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+        s = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
         s.bind((hostMACAddress, port))
        # s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.listen(backlog)
@@ -32,7 +32,7 @@ class Bluetoosh:
         os.system('sudo hciconfig hci0 piscan')
         try:
             print('started connecting')
-            client = s.accept()
+            client, address = s.accept()
             print('client accepted')
             while 1:
                 print('waitong for data...')
