@@ -32,7 +32,7 @@ class Bluetoosh:
         os.system('sudo hciconfig hci0 piscan')
         try:
             print('started connecting')
-            client, address = s.accept()
+            #client, address = s.accept()
             print('client accepted')
             while 1:
                 print('waitong for data...')
