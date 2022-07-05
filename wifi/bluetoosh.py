@@ -33,6 +33,7 @@ class Bluetoosh:
         try:
             print('started connecting')
             client = s.accept()
+            print('client accepted')
             while 1:
                 print('waitong for data...')
                 data = client.recv(size)
