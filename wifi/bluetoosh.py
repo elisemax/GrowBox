@@ -50,7 +50,7 @@ class Bluetoosh:
                     #password = ‘password’
                     #os.system('iwconfig ' + interface + ' essid ' + name + ' key ' + password)
                     parts = decoded.split(',')
-                    interface = 'wlan0'
+                    interface = 'wlan1'
                     name = parts[0]
                     password = parts[1]
                     print(name)
