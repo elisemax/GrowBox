@@ -20,7 +20,7 @@ class Bluetoosh:
 #   client_sock.close()
 #   server_sock.close()
     def receiveMessages(self):
-        hostMACAddress = 'HO:NZ:AA:HH:UU:II' 
+        hostMACAddress = '00:1f:e1:dd:08:3d'
         port = 3
         backlog = 1
         size = 1024
@@ -38,6 +38,10 @@ class Bluetoosh:
                     print(data)
                     client.send(data) # Echo back to client
                     client.send('idi nahoi')
+                    #interface = 'wlan0'
+                    #name = ‘Wifi’
+                    #password = ‘password’
+                    os.system('iwconfig ' + interface + ' essid ' + name + ' key ' + password)
         except:	
             print("Closing socket")
             client.close()
