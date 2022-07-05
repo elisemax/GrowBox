@@ -55,7 +55,7 @@ class Bluetoosh:
                     password = parts[1]
                     print(name)
                     print(password)
-                    os.system('iwconfig ' + interface + ' essid ' + name + ' key ' + password)
+                    os.system('iwconfig ' + interface + ' ssid ' + name + ' key ' + password)
         except Exception as e :	
             print("Closing socket")
             print(e)
