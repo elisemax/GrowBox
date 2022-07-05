@@ -41,11 +41,20 @@ class Bluetoosh:
                 if (data):
                     print("Polu4ili data po bluetooth")
                     print(data)
-                    client.send(data) # Echo back to client
+                    decoded = data.decode('utf-8')
+                    client.send(decoded) # Echo back to client
                     print('Otpravili data nazad')
+                    #os.system('sed -c -i "s/\($TARGET_KEY *= *\).*/\1$REPLACEMENT_VALUE/" $CONFIG_FILE')
                     #interface = 'wlan0'
                     #name = ‘Wifi’
                     #password = ‘password’
+                    #os.system('iwconfig ' + interface + ' essid ' + name + ' key ' + password)
+                    parts = decoded.split(',')
+                    interface = 'wlan0'
+                    name = parts[0]
+                    password = parts[1]
+                    print(name)
+                    print(password)
                     #os.system('iwconfig ' + interface + ' essid ' + name + ' key ' + password)
         except:	
             print("Closing socket")
