@@ -32,11 +32,11 @@ class Bluetoosh:
         os.system('sudo hciconfig hci0 piscan')
         try:
             print('started connecting')
-            client, clientInfo = s.accept()
+            client = s.accept()
             while 1:
-                print('waitong for bluetooth connection..')
+                print('waitong for data...')
                 data = client.recv(size)
-                if data:
+                if (data):
                     print("Polu4ili data po bluetooth")
                     print(data)
                     client.send(data) # Echo back to client
