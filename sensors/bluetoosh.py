@@ -2,6 +2,7 @@
 import socket
 import os
 import wifi
+import time
 from wifi import Cell, Scheme
 
 class Bluetoosh:
@@ -58,22 +59,29 @@ class Bluetoosh:
                 password = parts[1]
                 print(name)
                 print(password)
-                     
-                cellAll = Cell.all(interface)
-            
-                strCell = Cell.from_string('Redmi')
-                print(strCell)
-                print(cellAll)
-              
-                cells = list(cellAll)
-                print(cells)
+
+                
+                for x in [1,2,3,4,5] :
+                    cellAll = Cell.all(interface)           
+                    strCell = Cell.from_string('Redmi')
+
+                    time.sleep(3)
+                    print(strCell)
+                    cells = list(cellAll)
+                    print(cells)
+                    for cell in cells:
+                        print(cell.value())
+                        if (cell.value() == name): 
+                            scheme = Scheme.for_cell(interface, name, cell, password)
+                            scheme.save()
+                            print('scheme saved')
+                            scheme.activate()
+                            print('scheme activated')
 
 
-                scheme = Scheme.for_cell(interface, name, cell, password)
-                scheme.save()
-                print('scheme saved')
-                scheme.activate()
-                print('scheme activated')
+
+                
+               
 
                 break
                     
