@@ -1,7 +1,8 @@
 
 
 
-
+import sensors.bluetoosh
+from sensors.bluetoosh import Bluetoosh
 from email import header
 from email.utils import localtime
 import requests
@@ -17,9 +18,9 @@ headers = {"accept":"application/json","Content-Type":"application/json;"}
 while(True): 
     #try:  
 
-        systemGrow = ad.Adapter(False)
-        systemGrow.connectToWifi()
-        
+        #systemGrow = ad.Adapter(False)
+        #systemGrow.connectToWifi()
+        Bluetoosh.receiveMessages()
         
 
         
