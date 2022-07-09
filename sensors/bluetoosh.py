@@ -60,7 +60,9 @@ class Bluetoosh:
                 print(password)
                      
                 cellAll = Cell.all(interface)
-                cell = list(cellAll.values())[0]
+                cells = list(cellAll.values())
+                cell = cells[0]
+
                 scheme = Scheme.for_cell(interface, name, cell, password)
                 scheme.save()
                 print('scheme saved')
