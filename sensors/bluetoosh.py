@@ -61,6 +61,8 @@ class Bluetoosh:
                      
                 cellAll = Cell.all(interface)
             
+                strCell = Cell.from_string('Redmi')
+                print(strCell)
                 print(cellAll)
               
                 cells = list(cellAll)
