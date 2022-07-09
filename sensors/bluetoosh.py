@@ -33,41 +33,41 @@ class Bluetoosh:
         s.listen(backlog)
         #bluetooth.advertise_service(s,'hui', '1e0ca4ea-299d-4335-93eb-27fcfe7fa848')
         os.system('sudo hciconfig hci0 piscan')
-        try:
-            print('started connecting')
-            client, adress = s.accept()
-            print('client accepted')
-            while 1:
-                print('waitong for data...')
-                data = client.recv(size)
-                print('data was get')
-                if (data):
-                    print("Polu4ili data po bluetooth")
-                    print(data)
-                    decoded = data.decode('utf-8')
-                    client.send(data) # Echo back to client
+       # try:
+        print('started connecting')
+        client, adress = s.accept()
+        print('client accepted')
+        while 1:
+            print('waitong for data...')
+            data = client.recv(size)
+            print('data was get')
+            if (data):
+                print("Polu4ili data po bluetooth")
+                print(data)
+                decoded = data.decode('utf-8')
+                client.send(data) # Echo back to client
                     #print('Otpravili data nazad')
                     # os.system('sed -c -i "s/\($TARGET_KEY *= *\).*/\1$REPLACEMENT_VALUE/" $CONFIG_FILE')
                     #interface = 'wlan0'
                     #name = ‘Wifi’
                     #password = ‘password’
                     #os.system('iwconfig ' + interface + ' essid ' + name + ' key ' + password)
-                    parts = decoded.split(',')
-                    interface = 'wlan0'
-                    name = parts[0]
-                    password = parts[1]
-                    print(name)
-                    print(password)
+                parts = decoded.split(',')
+                interface = 'wlan0'
+                name = parts[0]
+                password = parts[1]
+                print(name)
+                print(password)
                      
-                    Cell.all(interface)
-                    cell = Cell.all(interface)[0]
-                    scheme = Scheme.for_cell(interface, name, cell, password)
-                    scheme.save()
-                    print('scheme saved')
-                    scheme.activate()
-                    print('scheme activated')
+                Cell.all(interface)
+                cell = Cell.all(interface)[0]
+                scheme = Scheme.for_cell(interface, name, cell, password)
+                scheme.save()
+                print('scheme saved')
+                scheme.activate()
+                print('scheme activated')
 
-                    break
+                break
                     
                    # os.system("sudo sh -c 'echo "network={
                     #ssid="Redmi"
@@ -88,8 +88,8 @@ class Bluetoosh:
                     # os.system('reboot')
 
             
-        except Exception as e :	
-            print("Closing socket")
-            print(e)
-            client.close()
-            s.close()
+        #except Exception as e :	
+        #    print("Closing socket")
+        #    print(e)
+        #    client.close()
+         #   s.close()
