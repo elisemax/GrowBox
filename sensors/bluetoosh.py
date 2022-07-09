@@ -62,10 +62,9 @@ class Bluetoosh:
                 cellAll = Cell.all(interface)
             
                 print(cellAll)
-                print(cellAll.values)
-                print(cellAll.items)
-                print(cellAll.keys)
-                cell = cellAll[0]
+              
+                cells = list(cellAll)
+                print(cells)
 
 
                 scheme = Scheme.for_cell(interface, name, cell, password)
