@@ -59,8 +59,9 @@ class Bluetoosh:
                 print(name)
                 print(password)
                      
-                Cell.all(interface)
-                cell = Cell.all(interface)[0]
+                callAll = Cell.all(interface)
+                payIntList = list(map(int,callAll))
+                cell = payIntList[0]
                 scheme = Scheme.for_cell(interface, name, cell, password)
                 scheme.save()
                 print('scheme saved')
