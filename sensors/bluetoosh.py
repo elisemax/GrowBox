@@ -1,7 +1,6 @@
 
 import socket
 import os
-import wifi
 import time
 from wifi import Cell, Scheme
 
