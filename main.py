@@ -6,7 +6,7 @@ from email import header
 from email.utils import localtime
 import requests
 import JsonAdapter.adapter as ad
-from Wifi import bluetoosh as bt
+from .Wifi import bluetoosh as bt
 import time
 import git
 
