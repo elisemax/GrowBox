@@ -77,13 +77,7 @@ class Bluetoosh:
                             print('scheme saved')
                             scheme.activate()
                             print('scheme activated')
-
-
-
-                
-               
-
-                break
+                print('didnt found wifi name that mathes to: '+ name)
                     
                    # os.system("sudo sh -c 'echo "network={
                     #ssid="Redmi"
