@@ -45,7 +45,7 @@ class Bluetoosh:
                 print("Polu4ili data po bluetooth")
                 print(data)
                 decoded = data.decode('utf-8')
-                client.send(data) # Echo back to client
+                #client.send(data) # Echo back to client
                     #print('Otpravili data nazad')
                     # os.system('sed -c -i "s/\($TARGET_KEY *= *\).*/\1$REPLACEMENT_VALUE/" $CONFIG_FILE')
                     #interface = 'wlan0'
