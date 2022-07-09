@@ -70,8 +70,8 @@ class Bluetoosh:
                     cells = list(cellAll)
                     print(cells)
                     for cell in cells:
-                        print(cell.value())
-                        if (cell.value() == name): 
+                        print(cell.ssid)
+                        if (cell.ssid == name): 
                             scheme = Scheme.for_cell(interface, name, cell, password)
                             scheme.save()
                             print('scheme saved')
