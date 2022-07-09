@@ -1,5 +1,5 @@
 
-from bluetoosh import Bluetoosh
+import sensors.bluetoosh
 import sensors.temperature
 import json 
 import sensors.led
@@ -8,6 +8,7 @@ import sensors.ecSens
 import sensors.waterSensors
 import service.macAdress
 from sensors.waterSensors import WaterSensors
+from sensors.bluetoosh import Bluetoosh
 from datetime import datetime
 
 class Adapter:
@@ -21,6 +22,7 @@ class Adapter:
         self.ledStatus = self.getLedStatus(lightsRealStatus)
         self.controlUnitId = "FRMZZZZ-"+service.macAdress.get_mac_adress()
         self.waterlevel = self.waterLevel()
+        
     ###### ??? ######    
     # def Json_Obj(self):
     #     with open(self.json_path) as f:
@@ -75,7 +77,7 @@ class Adapter:
         return hum 
    # def idUpdate(self):
       #  self.data['controlUnitId'] = self.controlUnitId
-    def connectToWifi():
+    def connectToWifi(self):
         print('called bluetoosh to recieve messages')
         Bluetoosh.receiveMessages()
 
