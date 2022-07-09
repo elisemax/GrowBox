@@ -1,4 +1,5 @@
 
+from bluetoosh import Bluetoosh
 import sensors.temperature
 import json 
 import sensors.led
@@ -74,7 +75,10 @@ class Adapter:
         return hum 
    # def idUpdate(self):
       #  self.data['controlUnitId'] = self.controlUnitId
-    
+    def connectToWifi():
+        print('called bluetoosh to recieve messages')
+        Bluetoosh.receiveMessages()
+
     def waterLevel(self):
         waterLevel = WaterSensors.waterLevelControl()
         return waterLevel
