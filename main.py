@@ -6,7 +6,7 @@ from email import header
 from email.utils import localtime
 import requests
 import JsonAdapter.adapter as ad
-#import wifi.bluetoosh as bt
+import Wifi.bluetoosh as bt
 import time
 import git
 
@@ -19,7 +19,7 @@ while(True):
     #try:  
 
         #systemGrow = ad.Adapter(False)
-        bluetoosh = bluetoosh.Bluetoosh()
+        bluetooz = bt.Bluetoosh()
         
 
         
@@ -37,7 +37,7 @@ while(True):
         #rGet = requests.get('http://192.168.0.10:8080/grow/status',json=systemGrow.Json_Obj())
         
         #systemGrow.getTime()
-        bluetoosh.receiveMessages()
+        bluetooz.receiveMessages()
         time.sleep(5)
         #print(rGet.status_code)
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
