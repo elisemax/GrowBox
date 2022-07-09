@@ -6,7 +6,7 @@ from email import header
 from email.utils import localtime
 import requests
 import JsonAdapter.adapter as ad
-import wifi.bluetoosh as bt
+#import wifi.bluetoosh as bt
 import time
 import git
 
@@ -19,7 +19,7 @@ while(True):
     #try:  
 
         #systemGrow = ad.Adapter(False)
-        bluetoosh = bt.Bluetoosh()
+        bluetoosh = bluetoosh.Bluetoosh()
         
 
         
