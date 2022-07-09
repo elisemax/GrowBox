@@ -1,6 +1,9 @@
 
 import socket
 import os
+import wifi
+from wifi import Cell, Scheme
+
 class Bluetoosh:
 # def receiveMessages():
 #   server_sock=bluetooth.BluetoothSocket( bluetooth.RFCOMM )
@@ -50,12 +53,35 @@ class Bluetoosh:
                     #password = ‘password’
                     #os.system('iwconfig ' + interface + ' essid ' + name + ' key ' + password)
                     parts = decoded.split(',')
-                    interface = 'wlan1'
+                    interface = 'wlan0'
                     name = parts[0]
                     password = parts[1]
                     print(name)
                     print(password)
-                    os.system('sudo iwconfig ' + interface + ' essid ' + name + ' key ' + password)
+                     
+                    Cell.all(interface)
+                    cell = Cell.all(interface)[0]
+                    scheme = Scheme.for_cell(interface, name, cell, password)
+                    scheme.save()
+                    print('scheme saved')
+                    scheme.activate()
+                    print('scheme activated')
+
+                    break
+                    
+                   # os.system("sudo sh -c 'echo "network={
+                    #ssid="Redmi"
+                    #psk="alkash13"
+                    #key_mgmt=WPA-PSK
+                    #priority=100
+                    #}" >> /etc/wpa_supplicant/wpa_supplicant.conf'")
+
+                    #script = sudo sh -c 'echo "network={
+                    #    ssid="Redmi"
+                    #    psk="alkash13"
+                    #    key_mgmt=WPA-PSK
+                    #    priority=100
+                    #}" >> /etc/wpa_supplicant/wpa_supplicant.conf'
                     # os.system('sed -c -i "s/\($ssid *= *\).*/\1$name/" $wpa_supplicant.conf')
                     # os.system('sed -c -i "s/\($psk *= *\).*/\1$password/" $wpa_supplicant.conf')
                     # os.system('sed -c -i "s/\($key_mgmt *= *\).*/\1$WPA-PSK/" $wpa_supplicant.conf')
