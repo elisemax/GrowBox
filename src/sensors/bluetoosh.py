@@ -4,7 +4,7 @@ import os
 import sys
 conf_path = os.getcwd()
 sys.path.append(conf_path)
-sys.path.append(conf_path + '\scripts\Setup') 
+sys.path.append(conf_path + '/home/admin/.local/lib/python3.9/') 
 import time
 from wifi import Cell, Scheme
 

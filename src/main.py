@@ -1,7 +1,6 @@
 
 
 
-import sensors.bluetoosh
 from sensors.bluetoosh import Bluetoosh
 from email import header
 from email.utils import localtime
