@@ -2,9 +2,9 @@
 import socket
 import os
 import sys
-conf_path = os.getcwd()
-sys.path.append(conf_path)
-sys.path.append(conf_path + '/home/admin/.local/lib/python3.9/') 
+#conf_path = os.getcwd()
+#sys.path.append(conf_path)
+#sys.path.append(conf_path + '/home/admin/.local/lib/python3.9/') 
 import time
 from wifi import Cell, Scheme
 
@@ -75,11 +75,17 @@ class Bluetoosh:
                     for cell in cells:
                         print(cell.ssid)
                         if (cell.ssid == name): 
-                            scheme = Scheme.for_cell(interface, name, cell, password)
-                            scheme.save()
-                            print('scheme saved')
-                            scheme.activate()
-                            print('scheme activated')
+                            try:
+                                scheme = Scheme.for_cell(interface, name, cell, password)
+                                scheme.save()
+                                print('scheme saved')
+                                scheme.activate()
+                                print('scheme activated')
+                            except Exception as e :
+                                print(e)
+                                print('didnt connected')
+
+
                 print('didnt found wifi name that mathes to: '+ name)
                     
                    # os.system("sudo sh -c 'echo "network={

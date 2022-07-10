@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+wifi = "*"
+board = "*"
+adafruit-extended-bus = "*"
+adafruit-circuitpython-ads1x15 = "*"
+gpio = "*"
+w1thermsensor = "*"
+python-git = "*"
+adafruit-ads1x15 = "*"
+getmac = "*"
+gitpython = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
