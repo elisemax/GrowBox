@@ -80,8 +80,9 @@ class Bluetoosh:
                             print('full cell')
                             print(cell)
                             
-                            scheme = Scheme.find('wlan0', name) 
+                            scheme = Scheme.find('wlan0', 'home') 
                             if scheme :
+                                print(scheme)
                                 scheme.activate()
                                 print('scheme activated')
                             else:
