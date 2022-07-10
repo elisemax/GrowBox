@@ -1,4 +1,5 @@
 
+from calendar import c
 import socket
 import os
 import sys
@@ -66,24 +67,27 @@ class Bluetoosh:
                 
                 for x in [1,2,3,4,5] :
                     cellAll = Cell.all(interface)           
-                    strCell = Cell.from_string('Redmi')
+                    #strCell = Cell.from_string('Redmi')
 
-                    time.sleep(3)
-                    print(strCell)
+                    time.sleep(2)
+                    #print(strCell)
                     cells = list(cellAll)
                     print(cells)
                     for cell in cells:
                         print(cell.ssid)
                         if (cell.ssid == name): 
+                            print('found wifi with ' + name)
+                            print('full cell')
+                            print(cell)
                             try:
-                                scheme = Scheme.for_cell(interface, name, cell, password)
+                                scheme = Scheme.for_cell('wlan0', name, cell, password)
                                 scheme.save()
                                 print('scheme saved')
                                 scheme.activate()
                                 print('scheme activated')
                             except Exception as e :
                                 print(e)
-                                print('didnt connected')
+                                print('exception happened')
 
 
                 print('didnt found wifi name that mathes to: '+ name)
