@@ -80,11 +80,17 @@ class Bluetoosh:
                             print('full cell')
                             print(cell)
                             
-                            scheme = Scheme.for_cell('wlan0', name, cell, password)
-                            scheme.save()
-                            print('scheme saved')
-                            scheme.activate()
-                            print('scheme activated')
+                            scheme = Scheme.find('wlan0', name) 
+                            if scheme :
+                                scheme.activate()
+                                print('scheme activated')
+                            else:
+                                scheme = Scheme.for_cell('wlan0', name, cell, password)
+                        
+                                scheme.save()
+                                print('scheme saved')
+                                scheme.activate()
+                                print('scheme activated')
                             
 
 
