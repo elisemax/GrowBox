@@ -7,8 +7,8 @@ import sys
 #sys.path.append(conf_path)
 #sys.path.append(conf_path + '/home/admin/.local/lib/python3.9/') 
 import time
-from wifiUpdate import wifiUpdate
-from configRewrite import configRewrite
+from wifiUpdate import update_wifi
+from configRewrite import fileRewrite
 
 
 class Bluetoosh:
@@ -58,6 +58,6 @@ class Bluetoosh:
                 password = parts[1]
                 print(name)
                 print(password)
-                wf.update_wifi("/home/admin/grow/GrowBox/src/service/wpa_supplicant.conf")
-                cf.fileRewrite()
+                update_wifi.update_wifi("/home/admin/grow/GrowBox/src/service/wpa_supplicant.conf")
+                fileRewrite.fileRewrite()
                 
