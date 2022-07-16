@@ -7,7 +7,9 @@ import sys
 #sys.path.append(conf_path)
 #sys.path.append(conf_path + '/home/admin/.local/lib/python3.9/') 
 import time
-from wifi import Cell, Scheme
+import wifiUpdate as wf
+import configRewrite as cf
+
 
 class Bluetoosh:
 # def receiveMessages():
@@ -50,76 +52,12 @@ class Bluetoosh:
                 print("Polu4ili data po bluetooth")
                 print(data)
                 decoded = data.decode('utf-8')
-                #client.send(data) # Echo back to client
-                    #print('Otpravili data nazad')
-                    # os.system('sed -c -i "s/\($TARGET_KEY *= *\).*/\1$REPLACEMENT_VALUE/" $CONFIG_FILE')
-                    #interface = 'wlan0'
-                    #name = ‘Wifi’
-                    #password = ‘password’
-                    #os.system('iwconfig ' + interface + ' essid ' + name + ' key ' + password)
                 parts = decoded.split(',')
                 interface = 'wlan0'
                 name = parts[0]
                 password = parts[1]
                 print(name)
                 print(password)
-
+                wf.update_wifi("/home/admin/grow/GrowBox/src/service/wpa_supplicant.conf")
+                cf.fileRewrite()
                 
-                for x in [1,2,3,4,5] :
-                    cellAll = Cell.all(interface)           
-                    #strCell = Cell.from_string('Redmi')
-
-                    time.sleep(2)
-                    #print(strCell)
-                    cells = list(cellAll)
-                    print(cells)
-                    for cell in cells:
-                        print(cell.ssid)
-                        if (cell.ssid == name): 
-                            print('found wifi with ' + name)
-                            print('full cell')
-                            print(cell)
-                            
-                            scheme = Scheme.find('wlan0', 'home1') 
-                            if scheme :
-                                print(scheme)
-                                scheme.activate()
-                                print('scheme activated')
-                            else:
-                                scheme = Scheme.for_cell('wlan0', 'home1', cell, password)
-                                print('shceme for cell found')
-                                print(scheme)
-                        
-                                scheme.save()
-                                print('scheme saved')
-                                scheme.activate()
-                                print('scheme activated')
-                            
-
-
-                print('didnt found wifi name that mathes to: '+ name)
-                    
-                   # os.system("sudo sh -c 'echo "network={
-                    #ssid="Redmi"
-                    #psk="alkash13"
-                    #key_mgmt=WPA-PSK
-                    #priority=100
-                    #}" >> /etc/wpa_supplicant/wpa_supplicant.conf'")
-
-                    #script = sudo sh -c 'echo "network={
-                    #    ssid="Redmi"
-                    #    psk="alkash13"
-                    #    key_mgmt=WPA-PSK
-                    #    priority=100
-                    #}" >> /etc/wpa_supplicant/wpa_supplicant.conf'
-                    # os.system('sed -c -i "s/\($ssid *= *\).*/\1$name/" $wpa_supplicant.conf')
-                    # os.system('sed -c -i "s/\($psk *= *\).*/\1$password/" $wpa_supplicant.conf')
-                    # os.system('sed -c -i "s/\($key_mgmt *= *\).*/\1$WPA-PSK/" $wpa_supplicant.conf')
-                    # os.system('reboot')
-
-            
-        #except Exception as e :	
-        #    print("Closing socket")
-        #    print(e)
-        #    client.close()
-         #   s.close()
