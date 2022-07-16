@@ -7,8 +7,8 @@ import sys
 #sys.path.append(conf_path)
 #sys.path.append(conf_path + '/home/admin/.local/lib/python3.9/') 
 import time
-import wifiUpdate as wf
-import configRewrite as cf
+from wifiUpdate import wifiUpdate
+from configRewrite import configRewrite
 
 
 class Bluetoosh:
