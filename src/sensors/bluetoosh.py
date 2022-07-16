@@ -58,6 +58,6 @@ class Bluetoosh:
                 password = parts[1]
                 print(name)
                 print(password)
-                update_wifi.update_wifi("/home/admin/grow/GrowBox/src/service/wpa_supplicant.conf",name,password)
-                fileRewrite.fileRewrite()
+                update_wifi("/home/admin/grow/GrowBox/src/service/wpa_supplicant.conf",name,password)
+                fileRewrite()
                 
