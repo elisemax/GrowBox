@@ -15,7 +15,7 @@ class Adapter:
     def __init__(self,lightsRealStatus):
         self.json_path = 'JsonAdapter/data.json'
         #  self.data = self.Json_Obj()
-        self.temperature = self.temperatureUpdate()
+        self.temperature =  22
         self.ph = 5
         self.ec = self.ecUpdate()
         self.hum = self.humUpdate()
