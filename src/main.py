@@ -50,8 +50,8 @@ while(True):
     #r = requests.post(url = 'http://p5023.dev.inited.cz/api/test/' ,json = {"controlUnitId":"piton"},headers=headers)
         #print('http://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId)
         #print(jsonObj)
-    print(r.status_code)
-    print(r.json())
+    print(post.status_code)
+    print(post.json())
 
         
         
