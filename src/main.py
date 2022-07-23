@@ -18,7 +18,7 @@ while(True):
     headers = {"Content-Type":"application/json", "Content-Length":"16","Host":"p5023.dev.inited.cz"}
     #try:  
 
-        #systemGrow = ad.Adapter(False)
+    systemGrow = ad.Adapter(False)
         #systemGrow.connectToWifi()
         #Bluetoosh.receiveMessages(False)
         
@@ -44,13 +44,13 @@ while(True):
         #g.pull()
         
         
-        #systemGrow.controlUnitId,
-        #systemGrow.getLightsRealStatus,
-        #systemGrow.getTemperature,systemGrow.getPH,
-        #systemGrow.getPPM,systemGrow.getHum,
-        #systemGrow.getTime)
+    post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json ={systemGrow.controlUnitId,
+    systemGrow.getLightsRealStatus,
+    systemGrow.getTemperature,systemGrow.getPH,
+    systemGrow.getPPM,systemGrow.getHum,
+    systemGrow.getTime},headers=headers)
         #jsonObj = systemGrow.createJsonObj("farm-2141", "true",22, 6, 400,     1,      "at",        )
-    r = requests.post(url = 'http://p5023.dev.inited.cz/api/test/' ,json = {"controlUnitId":"piton"},headers=headers)
+    #r = requests.post(url = 'http://p5023.dev.inited.cz/api/test/' ,json = {"controlUnitId":"piton"},headers=headers)
         #print('http://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId)
         #print(jsonObj)
     print(r.status_code)
