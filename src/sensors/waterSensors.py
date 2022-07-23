@@ -23,9 +23,9 @@ class WaterSensors:
         #buf.sort() # Sort samples and discard highest and lowest
         #buf = buf[2:-2]
         #avg = (sum(map(float,buf))/6) # Get average value from remaining 6
-        adc = Adafruit_ADS1x15.ADS1115()
+        adc = Adafruit_ADS1x15.ADS1115(i2c, address = 0x48)
         value = adc.read_adc(2,gain=1)
-        analog_voltage = value*(4.096/2047)
+        analog_voltage = value *( 4.096/2047)
         avg = analog_voltage
         return round(avg,2)
 
@@ -37,16 +37,16 @@ class WaterSensors:
         value = adc.read_adc(0,gain=2,data_rate=475)
         phDiff = 0.006
         k = 5.05
-        avg = value *phDiff -k
+        avg = value * phDiff -k
         
         return round(avg,2)
 
     
     def humidity_voltage():
        
-        adc = Adafruit_ADS1x15.ADS1115()
+        adc = Adafruit_ADS1x15.ADS1115(i2c, address = 0x49)
         value = adc.read_adc(3,gain=1)
-        analog_voltage = value*(4.096/2047)
+        analog_voltage = value * (4.096/2047)
         avg = analog_voltage
         return round(avg,2)
     
@@ -59,7 +59,7 @@ class WaterSensors:
         abs = voltage - max
 
         num = (voltage-max)/(min-max)
-        result = round((num-1.0)*(-1)*100,2)
+        result = round((num - 1.0) * ( -1 ) * 100,2)
         print("humidity")
         print(result)
         return result
