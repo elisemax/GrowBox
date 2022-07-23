@@ -49,7 +49,7 @@ while(True):
     post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {"controlUnitId": systemGrow.controlUnitId,"name": "Test",    "lightsRealStatus": systemGrow.ledStatus,
     "temperature": systemGrow.temperature,
     "pH": systemGrow.ph,
-    "humidity": systemGrow.humidity,
+    "humidity": systemGrow.hum,
     "ppm": systemGrow.ec,
     "createdAt": "2022-07-23T15:29:20.000Z" },headers=headers)
         #jsonObj = systemGrow.createJsonObj("farm-2141", "true",22, 6, 400,     1,      "at",        )
