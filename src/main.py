@@ -15,7 +15,7 @@ import git
 # systemGrow.idUpdate()
 
 while(True): 
-    headers = {"accept":"application/json","Content-Type":"application/json;"}
+    headers = {"Content-Type":"application/json"}
     #try:  
 
         #systemGrow = ad.Adapter(False)
