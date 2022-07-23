@@ -16,7 +16,7 @@ class Adapter:
         self.json_path = 'JsonAdapter/data.json'
         #  self.data = self.Json_Obj()
         self.temperature = self.temperatureUpdate()
-        self.ph = self.phUpdate()
+        self.ph = 5
         self.ec = self.ecUpdate()
         self.hum = self.humUpdate()
         self.ledStatus = self.getLedStatus(lightsRealStatus)
