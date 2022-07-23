@@ -15,13 +15,13 @@ class Adapter:
     def __init__(self,lightsRealStatus):
         self.json_path = 'JsonAdapter/data.json'
         #  self.data = self.Json_Obj()
-        self.temperature =  None
-        self.ph = None
-        self.ec = None
-        self.hum = None
-        self.ledStatus = None
+        self.temperature =  self.temperatureUpdate()
+        self.ph = self.phUpdate()
+        self.ec = self.ecUpdate()
+        self.hum = self.humUpdate()
+        self.ledStatus = self.getLedStatus(lightsRealStatus)
         self.controlUnitId = "NEWFARM001-"+service.macAdress.get_mac_adress()
-        self.waterlevel = None
+        self.waterlevel = self.waterLevel()
         
     ###### ??? ######    
     # def Json_Obj(self):
@@ -47,8 +47,8 @@ class Adapter:
             "temperature": temperature, 
             "pH": pH, 
             "name": None,
-         #   "ppm": ppm,
-          #  "hum":hum,
+            "ppm": ppm,
+             "hum":hum,
         #"createdAt":createdAt
           # "createdAt": "2022-05-13T09:51:35.000Z"
         }
