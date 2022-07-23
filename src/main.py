@@ -13,10 +13,10 @@ import git
 
 #systemGrow = JsonAdapter.adapter.Adapter(False)
 
-systemGrow.idUpdate()
-
+#systemGrow.idUpdate()
+headers = {"Content-Type":"application/json", "Content-Length":"16","Host":"p5023.dev.inited.cz"}
 while(True): 
-    headers = {"Content-Type":"application/json", "Content-Length":"16","Host":"p5023.dev.inited.cz"}
+
     #try:  
 
     systemGrow = ad.Adapter(False)
