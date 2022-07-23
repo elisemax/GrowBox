@@ -2,20 +2,27 @@ import RPi.GPIO as GPIO
 
 
 class Led:
-    def __init__(self,mode):
+    def __init__(self, mode):
         self.__ledStatus = self.ledControl(mode)
+        
+        
     @property
     def getLedStatus(self):
         return self.__ledStatus
-    def ledControl(self,On):
+    
+    
+    def ledControl(self, On):
         if On == True:
             print("True")
             self.LedOff()
             return True
+        
         if On == False:
             print("False")
             self.LedOn()
             return False
+        
+        
     def LedOff(self):
         GPIO.setmode(GPIO.BCM)
         OutputPin1 = 13
@@ -32,6 +39,8 @@ class Led:
         GPIO.output(OutputPin3, GPIO.HIGH)
         GPIO.output(OutputPin4, GPIO.HIGH)
         print("LedOn")
+        
+        
     def LedOn(self):
         GPIO.setmode(GPIO.BCM)
         OutputPin1 = 13
