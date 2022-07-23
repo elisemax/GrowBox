@@ -11,7 +11,7 @@ import git
 
 
 
-systemGrow = JsonAdapter.adapter.Adapter(False)
+
 systemGrow.idUpdate()
 
 while(True): 
