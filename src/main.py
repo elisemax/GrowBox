@@ -50,10 +50,11 @@ while(True):
         #systemGrow.getPPM,systemGrow.getHum,
         #systemGrow.getTime)
         #jsonObj = systemGrow.createJsonObj("farm-2141", "true",22, 6, 400,     1,      "at",        )
-    rPut = requests.post(url = 'http://p5023.dev.inited.cz/api/test/' ,data = {"controlUnitId":"piton"},headers=headers)
+    r = requests.post(url = 'http://p5023.dev.inited.cz/api/test/' ,json = {"controlUnitId":"piton"},headers=headers)
         #print('http://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId)
         #print(jsonObj)
-    print(str(rPut.json))
+    print(r.status_code)
+    print(r.json())
 
         
         
