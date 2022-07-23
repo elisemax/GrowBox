@@ -45,7 +45,7 @@ while(True):
         #g.pull()
         
     jsonObj = systemGrow.createJsonObj(systemGrow.controlUnitId, systemGrow.ledStatus, systemGrow.temperature, systemGrow.ph, systemGrow.ec, systemGrow.hum, "2022-07-23T13:21:37.000Z");
-    print((jsonObj))
+    print(jsonObj)
     post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json =jsonObj,headers=headers)
         #jsonObj = systemGrow.createJsonObj("farm-2141", "true",22, 6, 400,     1,      "at",        )
     #r = requests.post(url = 'http://p5023.dev.inited.cz/api/test/' ,json = {"controlUnitId":"piton"},headers=headers)
