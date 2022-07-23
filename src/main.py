@@ -11,8 +11,8 @@ import git
 
 
 
-#systemGrow = JsonAdapter.adapter.Adapter(False)
-# systemGrow.idUpdate()
+systemGrow = JsonAdapter.adapter.Adapter(False)
+systemGrow.idUpdate()
 
 while(True): 
     headers = {"Content-Type":"application/json", "Content-Length":"16","Host":"p5023.dev.inited.cz"}
@@ -43,12 +43,8 @@ while(True):
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         #g.pull()
         
-        
-    post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json ={systemGrow.controlUnitId,
-    systemGrow.getLightsRealStatus,
-    systemGrow.getTemperature,systemGrow.getPH,
-    systemGrow.getPPM,systemGrow.getHum,
-    systemGrow.getTime},headers=headers)
+    jsonObj = systemGrow.createJsonObj(controlUnitId, lightsRealStatus, temperature, pH, ppm, hum, createdAt);
+    post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json =jsonObj,headers=headers)
         #jsonObj = systemGrow.createJsonObj("farm-2141", "true",22, 6, 400,     1,      "at",        )
     #r = requests.post(url = 'http://p5023.dev.inited.cz/api/test/' ,json = {"controlUnitId":"piton"},headers=headers)
         #print('http://p5023.dev.inited.cz/api/test/'+systemGrow.controlUnitId)
