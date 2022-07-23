@@ -19,7 +19,7 @@ while(True):
 
     #try:  
 
-    systemGrow = ad.Adapter(True)
+    systemGrow = ad.Adapter(False)
         #systemGrow.connectToWifi()
         #Bluetoosh.receiveMessages(False)
         
