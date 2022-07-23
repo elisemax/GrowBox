@@ -15,7 +15,7 @@ import git
 # systemGrow.idUpdate()
 
 while(True): 
-    headers = {"Content-Type":"application/json", "Content-Length":350,"Host":"gkjtigt-fgbg-gbgb"}
+    headers = {"Content-Type":"application/json", "Content-Length":"350","Host":"gkjtigt-fgbg-gbgb"}
     #try:  
 
         #systemGrow = ad.Adapter(False)
