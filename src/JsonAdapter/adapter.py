@@ -46,7 +46,7 @@ class Adapter:
             "lightsRealStatus": lightsRealStatus, 
             "temperature": temperature, 
             "pH": pH, 
-            "name": "honza",
+            "name": None,
          #   "ppm": ppm,
           #  "hum":hum,
         #"createdAt":createdAt
