@@ -3,7 +3,6 @@ import sensors.bluetoosh
 import sensors.temperature
 import json 
 import sensors.led
-import sensors.phSens
 import sensors.ecSens
 import sensors.waterSensors
 import service.macAdress
