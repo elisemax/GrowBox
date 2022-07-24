@@ -18,7 +18,7 @@ class Adapter:
         self.temperature =  self.temperatureUpdate()
         self.ph = self.phUpdate()
         self.ec = self.ecUpdate()
-        self.hum = self.humUpdate(0)
+        self.hum1 = self.humUpdate(0)
         self.hum2 = self.humUpdate(1)
         self.hum3 = self.humUpdate(2)
         self.hum4 = self.humUpdate(3)

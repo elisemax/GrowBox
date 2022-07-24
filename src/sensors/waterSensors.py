@@ -13,19 +13,10 @@ class WaterSensors:
     b = 21.55509299
 
     def ec_read_voltage():
-        #i2c = busio.I2C(board.SCL, board.SDA)
-        #ads = ADS.ADS1015(i2c)
-        #channel = AnalogIn(ads, ADS.P2)
-        #buf = list()
         
-        #for i in range(10): # Take 10 samples
-        #    buf.append(channel.voltage)
-        #buf.sort() # Sort samples and discard highest and lowest
-        #buf = buf[2:-2]
-        #avg = (sum(map(float,buf))/6) # Get average value from remaining 6
         adc = Adafruit_ADS1x15.ADS1115(address = 0x49)
-        value = adc.read_adc(2,gain=1)
-        analog_voltage = value *(4.096 / 2047)
+        value = adc.read_adc(2,gain = 1)
+        analog_voltage = value * (4.096 / 2047)
         avg = analog_voltage
         return round(avg,2)
 
@@ -57,7 +48,7 @@ class WaterSensors:
         max = 0.8
         abs = voltage - max
 
-        num = (voltage-max)/(min-max)
+        num = (voltage - max) / (min - max)
         result = round((num - 1.0) * ( -1 ) * 100,2)
         print("humidity: ")
         print(result)
@@ -73,7 +64,7 @@ class WaterSensors:
     
         if (sensorValue == 0.0):
             return 0
-        Voltage = (5 / 1024.0)*sensorValue;   # Convert analog reading to Voltage
+        Voltage = (5 / 1024.0) * sensorValue;   # Convert analog reading to Voltage
         
         return round(((133.42 / Voltage * Voltage * Voltage - 255.86 * Voltage * Voltage + 857.39 * Voltage) * 0.5) * 1000 / 4,2); # Convert voltage value to TDS value
 
