@@ -40,10 +40,9 @@ while(True):
     "humidity2": systemGrow.hum2,
     "humidity3": systemGrow.hum3,
     "humidity4": systemGrow.hum4,
-    "ppm": systemGrow.ec,
-    "createdAt": "2022-07-23T15:29:20.000Z" },headers=headers)
+    "ppm": systemGrow.ec },headers=headers)
     
-    print(post)
+    
       
     print("UnitId: ")
     print(systemGrow.controlUnitId)
