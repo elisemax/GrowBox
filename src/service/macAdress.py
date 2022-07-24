@@ -5,5 +5,5 @@ def get_mac_adress():
     print(eth_mac)
     return eth_mac
 
-def get_bluetooth_mac_address():
+#def get_bluetooth_mac_address():
     
