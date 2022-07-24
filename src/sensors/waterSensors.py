@@ -25,7 +25,7 @@ class WaterSensors:
         #avg = (sum(map(float,buf))/6) # Get average value from remaining 6
         adc = Adafruit_ADS1x15.ADS1115(address = 0x49)
         value = adc.read_adc(2,gain=1)
-        analog_voltage = value *( 4.096/2047)
+        analog_voltage = value *(4.096 / 2047)
         avg = analog_voltage
         return round(avg,2)
 
@@ -40,19 +40,18 @@ class WaterSensors:
         avg = value * phDiff -k
         
         return round(avg,2)
-
     
-    def humidity_voltage():
-       
+    
+    def humidity_voltage(pinNumber):
         adc = Adafruit_ADS1x15.ADS1115(address = 0x48)
-        value = adc.read_adc(3,gain=1)
-        analog_voltage = value * (4.096/2047)
+        value = adc.read_adc(pinNumber,gain=1)
+        analog_voltage = value * (4.096 / 2047)
         avg = analog_voltage
         return round(avg,2)
     
-    def humidityGetValue():
-        voltage = WaterSensors.humidity_voltage()
-        print('humidity voltage:')
+    def humidityGetValue(pinNumber):
+        voltage = WaterSensors.humidity_voltage(pinNumber)
+        print('humidity voltage in pin number :' + pinNumber)
         print(voltage)
         min = 3.96
         max = 0.8
@@ -60,7 +59,7 @@ class WaterSensors:
 
         num = (voltage-max)/(min-max)
         result = round((num - 1.0) * ( -1 ) * 100,2)
-        print("humidity")
+        print("humidity: ")
         print(result)
         return result
 
@@ -72,11 +71,11 @@ class WaterSensors:
     def ec_get_ec():
         sensorValue = WaterSensors.ec_read_voltage()
     
-        if (sensorValue==0.0):
+        if (sensorValue == 0.0):
             return 0
-        Voltage = (5/1024.0)*sensorValue;   # Convert analog reading to Voltage
+        Voltage = (5 / 1024.0)*sensorValue;   # Convert analog reading to Voltage
         
-        return round(((133.42/Voltage*Voltage*Voltage - 255.86*Voltage*Voltage + 857.39*Voltage)*0.5)*1000/4,2); # Convert voltage value to TDS value
+        return round(((133.42 / Voltage * Voltage * Voltage - 255.86 * Voltage * Voltage + 857.39 * Voltage) * 0.5) * 1000 / 4,2); # Convert voltage value to TDS value
 
     def waterLevelControl():
         GPIO.setwarnings(False)

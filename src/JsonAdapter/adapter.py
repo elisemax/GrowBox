@@ -18,7 +18,10 @@ class Adapter:
         self.temperature =  self.temperatureUpdate()
         self.ph = self.phUpdate()
         self.ec = self.ecUpdate()
-        self.hum = self.humUpdate()
+        self.hum = self.humUpdate(0)
+        self.hum2 = self.humUpdate(1)
+        self.hum3 = self.humUpdate(2)
+        self.hum4 = self.humUpdate(3)
         self.ledStatus = self.getLedStatus(lightsRealStatus)
         self.controlUnitId = "NEWFARM001-"+service.macAdress.get_mac_adress()
         self.waterlevel = self.waterLevel()
@@ -40,20 +43,8 @@ class Adapter:
     # def ledTurnOn(self):
     #     self.data['lightsRealStatus'] = sensors.led.LedOn()          
     ###### ??? ######
-    def createJsonObj(self,controlUnitId,lightsRealStatus,temperature,pH,ppm,hum,createdAt):
-        jsonObj = {
-            "controlUnitId":controlUnitId,
-            "lightsRealStatus": lightsRealStatus, 
-            "temperature": temperature, 
-            "pH": pH, 
-            "name": None,
-            "ppm": ppm,
-             "hum":hum,
-        #"createdAt":createdAt
-          # "createdAt": "2022-05-13T09:51:35.000Z"
-        }
-        x = json.dumps(jsonObj)
-        return x            
+   
+           
     def temperatureUpdate(self):
       #  self.data['temperature'] = sensors.temperature.get_temperature()
         temperature = sensors.temperature.get_temperature()
@@ -70,9 +61,9 @@ class Adapter:
     def ecUpdate(self):
       #  self.data['ppm'] = WaterSensors.ec_get_ec()
         return WaterSensors.ec_get_ec()
-    def humUpdate(self):
+    def humUpdate(self, pinNumber):
        # self.data['soilHumidityPerc'] = WaterSensors.humidityGetValue()
-        hum = WaterSensors.humidityGetValue()
+        hum = WaterSensors.humidityGetValue(pinNumber)
         return hum 
    # def idUpdate(self):
       #  self.data['controlUnitId'] = self.controlUnitId
