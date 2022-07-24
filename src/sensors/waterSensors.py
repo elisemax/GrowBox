@@ -42,7 +42,8 @@ class WaterSensors:
     
     def humidityGetValue(pinNumber):
         voltage = WaterSensors.humidity_voltage(pinNumber)
-        print('humidity voltage in pin number :' + pinNumber.tostring())
+        print('humidity voltage in pin numbe')
+        print(pinNumber)
         print(voltage)
         min = 3.96
         max = 0.8
