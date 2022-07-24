@@ -43,7 +43,7 @@ while(True):
     "ppm": systemGrow.ec,
     "createdAt": "2022-07-23T15:29:20.000Z" },headers=headers)
     
-    
+    print(post)
       
     print("UnitId: ")
     print(systemGrow.controlUnitId)
