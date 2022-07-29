@@ -31,6 +31,8 @@ class WaterSensors:
         avg = value * phDiff -k
         print("ph voltage:")
         print(avg)
+        print("ph value")
+        print(value)
         
         return round(avg,2)
     
