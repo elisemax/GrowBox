@@ -15,7 +15,7 @@ class WaterSensors:
     def ec_read_voltage():
         
         adc = Adafruit_ADS1x15.ADS1115()
-        value = adc.read_adc(2,gain = 1,data_rate=8)
+        value = adc.read_adc(1,gain = 1,data_rate=8)
         analog_voltage = value * (4.096 / 2047)
         avg = analog_voltage
         return round(avg,2)
