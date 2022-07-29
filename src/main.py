@@ -45,10 +45,7 @@ while(True):
     
       
       
-    print("UnitId: ")
-    print(systemGrow.controlUnitId)
-    print("responseCode")
-    print(post.status_code)
+   
     
     print("ppm: ")
     print(systemGrow.ec)
@@ -56,8 +53,7 @@ while(True):
     
     print("ph")
     print(systemGrow.ph)
-    print("temp ")
-    print(systemGrow.temperature)
+   
    
 
         
