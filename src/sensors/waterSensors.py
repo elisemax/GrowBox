@@ -35,6 +35,19 @@ class WaterSensors:
         return round(avg,2)
     
     
+    def humidity_level_control(pinNumber):
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BCM)
+        buttonInput = pinNumber
+        GPIO.setup(buttonInput, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        buttonState = GPIO.input(buttonInput)
+        print("humidity level button state:")
+        print(buttonState)
+        if buttonState == True :
+            return True
+        else:
+            return False
+    
     def humidity_voltage(pinNumber):
         adc = Adafruit_ADS1x15.ADS1115(address = 0x49)
         value = adc.read_adc(pinNumber,gain=2/3)

@@ -17,10 +17,10 @@ class Adapter:
         self.temperature =  self.temperatureUpdate()
         self.ph = self.phUpdate()
         self.ec = self.ecUpdate()
-        self.hum1 = self.humUpdate(0)
-        self.hum2 = self.humUpdate(1)
-        self.hum3 = self.humUpdate(2)
-        self.hum4 = self.humUpdate(3)
+        self.hum1 = self.humUpdate(12)
+        self.hum2 = self.humUpdate(16)
+        self.hum3 = self.humUpdate(20)
+        self.hum4 = self.humUpdate(21)
         self.ledStatus = self.getLedStatus(lightsRealStatus)
         self.controlUnitId = "NEWFARM001-"+service.macAdress.get_mac_adress()
         self.waterlevel = self.waterLevel()
@@ -62,7 +62,7 @@ class Adapter:
         return WaterSensors.ec_get_ec()
     def humUpdate(self, pinNumber):
        # self.data['soilHumidityPerc'] = WaterSensors.humidityGetValue()
-        hum = WaterSensors.humidityGetValue(pinNumber)
+        hum = WaterSensors.humidity_level_control(pinNumber)
         return hum 
    # def idUpdate(self):
       #  self.data['controlUnitId'] = self.controlUnitId
