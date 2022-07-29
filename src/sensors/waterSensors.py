@@ -37,7 +37,7 @@ class WaterSensors:
     
     def humidity_voltage(pinNumber):
         adc = Adafruit_ADS1x15.ADS1115(address = 0x49)
-        value = adc.read_adc(pinNumber,gain=1)
+        value = adc.read_adc(pinNumber,gain=2/3)
         analog_voltage = value * (4.096 / 2047)
         avg = analog_voltage
         return round(avg,2)
