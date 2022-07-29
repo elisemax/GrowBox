@@ -95,8 +95,7 @@ class WaterSensors:
         buttonInput = 17
         GPIO.setup(buttonInput, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         buttonState = GPIO.input(buttonInput)
-        print("water level button state:")
-        print(buttonState)
+        
         if buttonState == True :
             return True
         else:

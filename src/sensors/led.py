@@ -13,12 +13,10 @@ class Led:
     
     def ledControl(self, On):
         if On == True:
-            print("True")
             self.LedOff()
             return True
         
         if On == False:
-            print("False")
             self.LedOn()
             return False
         
@@ -38,7 +36,6 @@ class Led:
         GPIO.output(OutputPin2, GPIO.HIGH)
         GPIO.output(OutputPin3, GPIO.HIGH)
         GPIO.output(OutputPin4, GPIO.HIGH)
-        print("LedOn")
         
         
     def LedOn(self):
@@ -56,6 +53,5 @@ class Led:
         GPIO.output(OutputPin2, GPIO.LOW)
         GPIO.output(OutputPin3, GPIO.LOW)
         GPIO.output(OutputPin4, GPIO.LOW)
-        print("LedOff")
 
 
