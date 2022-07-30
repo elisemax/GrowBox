@@ -20,6 +20,7 @@ class WaterSensors:
        
         adc = ADS.ADS1115(i2c)
         channel = AnalogIn(adc, ADS.P1)
+        print('Test ec')
         print(channel.voltage)
         value=0
         #value = adc.read_adc(1)
@@ -34,17 +35,14 @@ class WaterSensors:
        
         adc = ADS.ADS1115(i2c)
         channel = AnalogIn(adc, ADS.P0)
+        print('Test ph')
         print(channel.voltage)
         #value = adc.read_adc(0)
         value=0
         phDiff = 0.006
         k = 5.05
         avg = value * phDiff -k
-        print("ph voltage:")
-        print(avg)
-        print("ph value")
-        print(value)
-        
+       
         return round(avg,2)
     
     
