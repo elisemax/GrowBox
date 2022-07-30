@@ -27,7 +27,9 @@ class WaterSensors:
 
     def ph_read_voltage():
         i2c = busio.I2C(board.SCL, board.SDA)
-        adc = Adafruit_ADS1x15.ADS1115(i2c)
+        channel = AnalogIn(ads, ADS.P0)
+        adc = ADS.ADS1115(i2c)
+        print(channel.voltage)
         value = adc.read_adc(0)
         phDiff = 0.006
         k = 5.05
