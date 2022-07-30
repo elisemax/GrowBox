@@ -18,6 +18,9 @@ class WaterSensors:
         value = adc.read_adc(1)
         analog_voltage = value * (4.096 / 2047)
         avg = analog_voltage
+        print("Ec")
+        print(value)
+        
         return round(avg,2)
 
     # Setup 
