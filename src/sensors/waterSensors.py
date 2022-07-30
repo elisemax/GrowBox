@@ -17,8 +17,12 @@ class WaterSensors:
 
     def ec_read_voltage():
         i2c = busio.I2C(board.SCL, board.SDA)
-        adc = Adafruit_ADS1x15.ADS1115(i2c)
-        value = adc.read_adc(1)
+       
+        adc = ADS.ADS1115(i2c)
+        channel = AnalogIn(adc, ADS.P1)
+        print(channel.voltage)
+        value=0
+        #value = adc.read_adc(1)
         analog_voltage = value * (4.096 / 2047)
         avg = analog_voltage
         return round(avg,2)
