@@ -2,6 +2,7 @@
 from tokenize import Double
 import time
 import sys
+import board
 import RPi.GPIO as GPIO
 import Adafruit_ADS1x15
 import busio
