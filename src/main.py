@@ -23,7 +23,7 @@ while(True):
         
     systemGrow = ad.Adapter(False)
         
-    time.sleep(3)
+    time.sleep(5)
        
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         #g.pull()
@@ -41,11 +41,6 @@ while(True):
     "humidity3": systemGrow.hum3,
     "humidity4": systemGrow.hum4,
     "ppm": systemGrow.ec },headers=headers)
-    
-    
-      
-      
-   
     
     print("ppm: ")
     print(systemGrow.ec)

@@ -49,28 +49,6 @@ class WaterSensors:
             return True
         else:
             return False
-    
-    def humidity_voltage(pinNumber):
-        adc = Adafruit_ADS1x15.ADS1115(address = 0x49)
-        value = adc.read_adc(pinNumber,gain=2/3)
-        analog_voltage = value * (4.096 / 2047)
-        avg = analog_voltage
-        return round(avg,2)
-    
-    def humidityGetValue(pinNumber):
-        voltage = WaterSensors.humidity_voltage(pinNumber)
-        print('humidity voltage in pin numbe')
-        print(pinNumber)
-        print(voltage)
-        min = 3.96
-        max = 0.8
-        abs = voltage - max
-
-        num = (voltage - max) / (min - max)
-        result = round((num - 1.0) * ( -1 ) * 100,2)
-        print("humidity: ")
-        print(result)
-        return result
 
 
     def ph_get_ph():
