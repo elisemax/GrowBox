@@ -23,7 +23,7 @@ while(True):
         
     systemGrow = ad.Adapter(False)
         
-    time.sleep(5)
+    time.sleep(2)
        
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         #g.pull()
