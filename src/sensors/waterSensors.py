@@ -2,12 +2,9 @@
 from tokenize import Double
 import time
 import sys
-import board
 import RPi.GPIO as GPIO
 import Adafruit_ADS1x15
-import busio
-import adafruit_ads1x15.ads1115 as ADS
-from adafruit_ads1x15.analog_in import AnalogIn
+
 
 class WaterSensors:
     ph4 = 3.11
@@ -16,14 +13,9 @@ class WaterSensors:
     b = 21.55509299
 
     def ec_read_voltage():
-        i2c = busio.I2C(board.SCL, board.SDA)
-       
-        adc = ADS.ADS1115(i2c)
-        channel = AnalogIn(adc, ADS.P1)
-        print('Test ec')
-        print(channel.voltage)
-        value=0
-        #value = adc.read_adc(1)
+        
+        adc = Adafruit_ADS1x15.ADS1015()
+        value = adc.read_adc(1)
         analog_voltage = value * (4.096 / 2047)
         avg = analog_voltage
         return round(avg,2)
@@ -31,18 +23,17 @@ class WaterSensors:
     # Setup 
 
     def ph_read_voltage():
-        i2c = busio.I2C(board.SCL, board.SDA)
-       
-        adc = ADS.ADS1115(i2c)
-        channel = AnalogIn(adc, ADS.P0)
-        print('Test ph')
-        print(channel.voltage)
-        #value = adc.read_adc(0)
-        value=0
+        
+        adc = Adafruit_ADS1x15.ADS105()
+        value = adc.read_adc(0)
         phDiff = 0.006
         k = 5.05
         avg = value * phDiff -k
-       
+        print("ph voltage:")
+        print(avg)
+        print("ph value")
+        print(value)
+        
         return round(avg,2)
     
     
@@ -71,7 +62,6 @@ class WaterSensors:
         if (sensorValue == 0.0):
             return 0
         Voltage = (5 / 1024.0) * sensorValue;   # Convert analog reading to Voltage
-        
         return round(((133.42 / Voltage * Voltage * Voltage - 255.86 * Voltage * Voltage + 857.39 * Voltage) * 0.5) * 1000 / 4,2); # Convert voltage value to TDS value
 
     def waterLevelControl():
