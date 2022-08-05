@@ -59,8 +59,9 @@ class WaterSensors:
         if (sensorValue == 0.0):
             return 0
         Voltage = (5 / 1024.0) * sensorValue;   # Convert analog reading to Voltage
-        return round(((133.42 / Voltage * Voltage * Voltage - 255.86 * Voltage * Voltage + 857.39 * Voltage) * 0.5) * 1000 / 4,2); # Convert voltage value to TDS value
-
+        ppm = round(((133.42 / Voltage * Voltage * Voltage - 255.86 * Voltage * Voltage + 857.39 * Voltage) * 0.5) * 1000 / 4,2); # Convert voltage value to TDS value
+        return ppm / 500
+    
     def waterLevelControl():
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BCM)
