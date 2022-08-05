@@ -50,7 +50,7 @@ class WaterSensors:
 
     def ph_get_ph():
         pHValue = WaterSensors.ph_read_voltage()
-        return pHValue * 1.5
+        return pHValue * 1.4
 
     def ec_get_ec():
         sensorValue = WaterSensors.ec_read_voltage()
