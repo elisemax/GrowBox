@@ -4,7 +4,7 @@ import time
 import sys
 import RPi.GPIO as GPIO
 import Adafruit_ADS1x15
-import adafruit_ads1x15.ads1015 as ADS
+import adafruit_ads1x15.ads1115 as ADS
 
 
 class WaterSensors:
@@ -26,7 +26,7 @@ class WaterSensors:
 
     def ph_read_voltage():
         
-        adc = Adafruit_ADS1x15.ADS1015()
+        adc = Adafruit_ADS1x15.ADS1115()
         value = adc.read_adc(0,gain=1,data_rate=3300)
         #chan = AnalogIn(adc, ADS.P1)
         print("ph value")
