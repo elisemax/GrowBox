@@ -6,6 +6,7 @@ import RPi.GPIO as GPIO
 import Adafruit_ADS1x15
 import adafruit_ads1x15.ads1015 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
+import busio
 
 
 class WaterSensors:
@@ -26,10 +27,11 @@ class WaterSensors:
     # Setup 
 
     def ph_read_voltage():
+        i2c = busio.I2C(board.SCL, board.SDA)
         
-        adc = Adafruit_ADS1x15.ADS1015()
+        adc = ADS.ADS1015(i2c)
         #value = adc.read_adc(0,gain=1,data_rate=3300)
-        chan = AnalogIn(adc, ADS.P0)
+        chan = AnalogIn(adc, ADS.P1)
         print(chan.value)
         print(chan.voltage)
         phDiff = 0.006
