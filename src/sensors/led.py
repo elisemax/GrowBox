@@ -6,9 +6,7 @@ class Led:
     #    self.__ledStatus = self.ledControl(mode)
         
         
-    @property
-    def getLedStatus(self):
-        return self.__ledStatus
+
     
     
     def ledControl(self, first, second, third, fourth):

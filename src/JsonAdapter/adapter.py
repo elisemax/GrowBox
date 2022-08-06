@@ -2,13 +2,14 @@
 import sensors.bluetoosh
 import sensors.temperature
 import json 
-import sensors.led
+import sensors.led 
 import sensors.ecSens
 import sensors.waterSensors
 import service.macAdress
 from sensors.waterSensors import WaterSensors
 from sensors.bluetoosh import Bluetoosh
 from datetime import datetime
+from sensors.led import Led
 
 class Adapter:
     def __init__(self,first, second, third, fourth):
@@ -21,7 +22,7 @@ class Adapter:
         self.hum2 = self.humUpdate(16)
         self.hum3 = self.humUpdate(20)
         self.hum4 = self.humUpdate(21)
-        self.ledStatus = self.getLedStatus(first, second, third, fourth)
+        self.ledStatus = self.setLed(first, second, third, fourth)
         self.controlUnitId = "NEWFARM001-"+service.macAdress.get_mac_adress()
         self.waterlevel = self.waterLevel()
    
@@ -30,9 +31,8 @@ class Adapter:
       #  self.data['temperature'] = sensors.temperature.get_temperature()
         temperature = sensors.temperature.get_temperature()
         return temperature
-    def getLedStatus(self,first, second, third, fourth):
-        ledStatus = sensors.led.Led()
-        ledStatus.ledControl(self,first, second, third, fourth)
+    def setLed(self,first, second, third, fourth):
+        Led.ledControl(self,first, second, third, fourth)
         
     def phUpdate(self):
       #  self.data["pH"] = WaterSensors.ph_get_ph()
