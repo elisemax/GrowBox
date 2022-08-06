@@ -29,11 +29,11 @@ class Led:
         
     def setLight(pin, value):
         if value == True:
-            self.LedOff(pin)
+            Led.LedOff(pin)
         if value == False:
-            self.LedOn(pin)
+            Led.LedOn(pin)
         
-    def LedOff(self, outputPin):
+    def LedOff(outputPin):
         GPIO.setmode(GPIO.BCM)
         
         GPIO.setup(outputPin, GPIO.OUT)
@@ -43,7 +43,7 @@ class Led:
         
         
         
-    def LedOn(self, outputPin):
+    def LedOn(outputPin):
         GPIO.setmode(GPIO.BCM)
        
         GPIO.setup(outputPin, GPIO.OUT)
