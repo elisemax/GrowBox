@@ -21,17 +21,17 @@ class Led:
         "third": 5,
         "fourth": 6
         }
-        Led.setLight(17, first)
-        Led.setLight(22, second)
+        Led.setLight(13, first)
+        Led.setLight(19, second)
         Led.setLight(5, third)
-        Led.setLight(27, fourth)
+        Led.setLight(17, fourth)
         
         
     def setLight(pin, value):
         if value == True:
             Led.LedOff(pin)
         if value == False:
-            Led.LedOn(pin)
+            LedOn(pin)
         
     def LedOff(outputPin):
         GPIO.setmode(GPIO.BCM)
