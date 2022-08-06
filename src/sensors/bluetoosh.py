@@ -31,7 +31,8 @@ class Bluetoosh:
         client, adress = s.accept()
         print('INFO[bluetooth]: client accepted')
         
-        for x in range(6):
+        for x in range(10):
+            time.sleep(1)
             print('INFO[bluetooth]: waiting for data...')
             data = client.recv(size)
             print('INFO[bluetooth]: got data')
