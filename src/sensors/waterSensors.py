@@ -38,7 +38,7 @@ class WaterSensors:
         print(values/5)
         x = (values/5) * 0.015
     
-        result = x - 5.48
+        result = x - 5.6
         
         
         return result
