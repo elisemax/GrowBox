@@ -15,15 +15,17 @@ from sensors.configRewrite import fileRewrite
 class Bluetoosh:
 
     def receiveMessages():
-        mac = service.macAdress.get_mac_adress()[-4:]
-        print(mac)
-        hostMACAddress = 'B8:27:EB:C9:EF:55'
+        mac = service.macAdress.get_mac_adress()[-5:]
+        hostMACAddress = 'B8:27:EB:C9:'+mac
+        print(hostMACAddress)
+    
         port = 2
         backlog = 1
         size = 1024
         s = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
         s.bind((hostMACAddress, port))
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        tcpServer.settimeout(10)
         s.listen(backlog)
         os.system('sudo hciconfig hci0 piscan')
        # try:
@@ -32,7 +34,6 @@ class Bluetoosh:
         print('INFO[bluetooth]: client accepted')
         
         for x in range(10):
-            time.sleep(1)
             print('INFO[bluetooth]: waiting for data...')
             data = client.recv(size)
             print('INFO[bluetooth]: got data')
