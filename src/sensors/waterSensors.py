@@ -31,10 +31,10 @@ class WaterSensors:
         #chan = AnalogIn(adc, ADS.P1)
         print("ph value")
         print(value)
+        x = value * 0.015
         
-        avg = (value * 0.015) -5.48
         
-        return avg
+        return avg - 5.48
     
     
     def humidity_level_control(pinNumber):
