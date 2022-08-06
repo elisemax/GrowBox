@@ -9,7 +9,7 @@ class Led:
 
     
     
-    def ledControl(self, first, second, third, fourth):
+    def ledControl(first, second, third, fourth):
         OutputPin1 = 13
         OutputPin2 = 19
         OutputPin3 = 5
@@ -21,10 +21,10 @@ class Led:
         "third": 5,
         "fourth": 6
         }
-        Led.setLight(self, 13, first)
-        Led.setLight(self, 19, second)
-        Led.setLight(self, 5, third)
-        Led.setLight(self, 6, fourth)
+        Led.setLight(13, first)
+        Led.setLight(19, second)
+        Led.setLight(5, third)
+        Led.setLight(6, fourth)
         
         
     def setLight(self,pin, value):
@@ -33,7 +33,7 @@ class Led:
         if value == False:
             self.LedOn(pin)
         
-    def LedOff(self, outputPin):
+    def LedOff(outputPin):
         GPIO.setmode(GPIO.BCM)
         
         GPIO.setup(outputPin, GPIO.OUT)
@@ -43,7 +43,7 @@ class Led:
         
         
         
-    def LedOn(self, outputPin):
+    def LedOn(outputPin):
         GPIO.setmode(GPIO.BCM)
        
         GPIO.setup(outputPin, GPIO.OUT)
