@@ -31,7 +31,7 @@ class Adapter:
         temperature = sensors.temperature.get_temperature()
         return temperature
     def getLedStatus(self,first, second, third, fourth):
-        ledStatus = sensors.led.Led(self,first, second, third, fourth)
+        ledStatus = sensors.led.Led()
         ledStatus.ledControl(self,first, second, third, fourth)
         
     def phUpdate(self):
