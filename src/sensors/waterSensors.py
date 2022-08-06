@@ -36,7 +36,7 @@ class WaterSensors:
     
         print("avg ph value")
         print(values/5)
-        x = (values/5) * 0.014
+        x = (values/5) * 0.015
     
         result = x - 5.48
         
