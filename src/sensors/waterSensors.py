@@ -31,7 +31,7 @@ class WaterSensors:
         #chan = AnalogIn(adc, ADS.P1)
         print("ph value")
         print(value)
-        voltage = (value * 4.096) / 32767
+        voltage = value * (4.096 / 32767)
         print("ph voltage")
         print(voltage)
         phDiff = 0.006
