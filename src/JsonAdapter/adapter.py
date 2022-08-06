@@ -11,7 +11,7 @@ from sensors.bluetoosh import Bluetoosh
 from datetime import datetime
 
 class Adapter:
-    def __init__(self,lightsRealStatus):
+    def __init__(self,first, second, third, fourth):
         self.json_path = 'JsonAdapter/data.json'
         #  self.data = self.Json_Obj()
         self.temperature =  self.temperatureUpdate()
@@ -21,7 +21,7 @@ class Adapter:
         self.hum2 = self.humUpdate(16)
         self.hum3 = self.humUpdate(20)
         self.hum4 = self.humUpdate(21)
-        self.ledStatus = self.getLedStatus(lightsRealStatus)
+        self.ledStatus = self.getLedStatus(first, second, third, fourth)
         self.controlUnitId = "NEWFARM001-"+service.macAdress.get_mac_adress()
         self.waterlevel = self.waterLevel()
    
