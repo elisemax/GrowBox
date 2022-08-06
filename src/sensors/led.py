@@ -27,7 +27,7 @@ class Led:
         Led.setLight(6, fourth)
         
         
-    def setLight(self, pin, value):
+    def setLight(pin, value):
         if value == True:
             self.LedOff(pin)
         if value == False:
