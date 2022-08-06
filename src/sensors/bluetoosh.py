@@ -16,7 +16,7 @@ class Bluetoosh:
 
     def receiveMessages():
         mac = service.macAdress.get_mac_adress()[-5:]
-        hostMACAddress = 'B8:27:EB:C9:10:AA'
+        hostMACAddress = 'B8:27:EB:9D:06:25'
         #+mac
         print(hostMACAddress)
     
