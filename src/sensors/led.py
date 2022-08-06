@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 
 class Led:
     def __init__(self, first, second, third, fourth):
-        self.__ledStatus = self.ledControl(mode)
+        self.__ledStatus = self.ledControl(first, second, third, fourth)
         
         
     @property

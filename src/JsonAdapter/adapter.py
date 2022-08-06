@@ -30,7 +30,7 @@ class Adapter:
       #  self.data['temperature'] = sensors.temperature.get_temperature()
         temperature = sensors.temperature.get_temperature()
         return temperature
-    def getLedStatus(self,lightsRealStatus):
+    def getLedStatus(self,first, second, third, fourth):
         ledStatus = sensors.led.Led(lightsRealStatus)
         x = ledStatus.ledControl(lightsRealStatus)
         return x
