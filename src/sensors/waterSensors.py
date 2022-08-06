@@ -22,24 +22,17 @@ class WaterSensors:
         
         return round(avg,2)
 
-    # Setup 
-
     def ph_read_voltage():
         
         adc = Adafruit_ADS1x15.ADS1015()
         values = 0
-        for x in [1,2,3]:
+        for x in [1,2,3,4,5]:
             value = adc.read_adc(0,gain=1,data_rate=3300)
-            time.sleep(1)
-            print(value)
             values = values + value
     
-        print("avg ph value")
-        print(values/3)
-        x = (values/3) * 0.015
+        x = (values/5) * 0.015
     
         result = x - 5.6
-        
         
         return result
     
@@ -50,8 +43,6 @@ class WaterSensors:
         buttonInput = pinNumber
         GPIO.setup(buttonInput, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         buttonState = GPIO.input(buttonInput)
-        #print("humidity level button state:")
-        #print(buttonState)
     
         if buttonState == True :
             return False

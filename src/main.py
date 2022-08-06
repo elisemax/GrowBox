@@ -46,7 +46,7 @@ while(True):
         print("turning on pump")
         systemGrow.setPump(True)
     
-    print("ppm: ")
+    print("ec: ")
     print(systemGrow.ec)
     
     
