@@ -21,15 +21,13 @@ while(True):
         #systemGrow.connectToWifi()
         #Bluetoosh.receiveMessages(False)
         
-    systemGrow = ad.Adapter( False,False,False,False)
+    systemGrow = ad.Adapter( True,True,True,True)
         
     
        
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         #g.pull()
         
-    jsonObj = systemGrow.createJsonObj(systemGrow.controlUnitId, systemGrow.ledStatus, systemGrow.temperature, systemGrow.ph, systemGrow.ec, systemGrow.hum, "2022-07-23T13:21:37.000Z");
-    print(jsonObj)
     #post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
     #"controlUnitId": systemGrow.controlUnitId,
     #"name": "Test",
@@ -42,6 +40,7 @@ while(True):
     #"humidity4": systemGrow.hum4,
     #"ppm": systemGrow.ec },headers=headers)
     if(systemGrow.hum1==True or systemGrow.hum2==True or systemGrow.hum3 == True or systemGrow.hum4 == True or systemGrow.waterlevel == True):
+        print("turning off pump")
         systemGrow.setPump(False)
     else:
         systemGrow.setPump(True)

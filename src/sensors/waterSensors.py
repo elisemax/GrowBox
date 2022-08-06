@@ -52,11 +52,14 @@ class WaterSensors:
         buttonState = GPIO.input(buttonInput)
         #print("humidity level button state:")
         #print(buttonState)
+        print("humidity button:")
+        print(buttonState)
         if buttonState == True :
             return True
         else:
             return False
 
+        
 
     def ph_get_ph():
         pHValue = WaterSensors.ph_read_voltage()
@@ -78,11 +81,13 @@ class WaterSensors:
         buttonInput = 17
         GPIO.setup(buttonInput, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         buttonState = GPIO.input(buttonInput)
-        
+        print("waterlevel buttron:")
+        print(buttonState)
         if buttonState == True :
             return True
         else:
             return False
+        
         
     
         
