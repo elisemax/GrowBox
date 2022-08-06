@@ -21,13 +21,13 @@ class Led:
         "third": 5,
         "fourth": 6
         }
-        Led.setLight(13, first)
-        Led.setLight(19, second)
-        Led.setLight(5, third)
-        Led.setLight(6, fourth)
+        Led.setLight(self, 13, first)
+        Led.setLight(self, 19, second)
+        Led.setLight(self, 5, third)
+        Led.setLight(self, 6, fourth)
         
         
-    def setLight(pin, value):
+    def setLight(self,pin, value):
         if value == True:
             self.LedOff(pin)
         if value == False:
