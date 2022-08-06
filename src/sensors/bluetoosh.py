@@ -28,24 +28,26 @@ class Bluetoosh:
         s.settimeout(10)
         s.listen(backlog)
         os.system('sudo hciconfig hci0 piscan')
-       # try:
-        print('INFO[bluetooth]: started connecting')
-        client, adress = s.accept()
-        print('INFO[bluetooth]: client accepted')
-        
-        for x in range(10):
-            print('INFO[bluetooth]: waiting for data...')
-            data = client.recv(size)
-            print('INFO[bluetooth]: got data')
-            if (data):
-                print("INFO[bluetooth]: data not null: ")
-                decoded = data.decode('utf-8')
-                parts = decoded.split(',')
-                interface = 'wlan0'
-                name = parts[0]
-                password = parts[1]
-                print(name)
-                print(password)
-                update_wifi("/home/admin/grow/GrowBox/src/service/wpa_supplicant.conf",name,password)
-                fileRewrite()
-                
+        try:
+            print('INFO[bluetooth]: started connecting')
+            client, adress = s.accept()
+            print('INFO[bluetooth]: client accepted')
+            
+            for x in range(10):
+                print('INFO[bluetooth]: waiting for data...')
+                data = client.recv(size)
+                print('INFO[bluetooth]: got data')
+                if (data):
+                    print("INFO[bluetooth]: data not null: ")
+                    decoded = data.decode('utf-8')
+                    parts = decoded.split(',')
+                    interface = 'wlan0'
+                    name = parts[0]
+                    password = parts[1]
+                    print(name)
+                    print(password)
+                    update_wifi("/home/admin/grow/GrowBox/src/service/wpa_supplicant.conf",name,password)
+                    fileRewrite()
+        except Exception as e:
+            print(e)
+            pass
