@@ -32,7 +32,9 @@ class WaterSensors:
         print("ph value")
         print(value)
         x = value * 0.015
+        print(x)
         result = x - 5.48
+        print(result)
         
         return result
     
