@@ -42,6 +42,8 @@ class Adapter:
         return WaterSensors.ec_get_ec()
     def humUpdate(self, pinNumber):
         hum = WaterSensors.humidity_level_control(pinNumber)
+        print("humidity button:")
+        print(hum)
         return hum 
    # def idUpdate(self):
       #  self.data['controlUnitId'] = self.controlUnitId
