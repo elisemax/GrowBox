@@ -27,9 +27,12 @@ class WaterSensors:
         
         adc = Adafruit_ADS1x15.ADS1015()
         value = adc.read_adc(0,gain=1,data_rate=3300)
+        chan = AnalogIn(0)
+        print(chan.value)
+        print(chan.voltage)
         phDiff = 0.006
         k = 5.05
-        avg = value *phDiff -k
+        avg = value * phDiff -k
         
         return round(avg,2)
     
