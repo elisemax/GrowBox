@@ -31,7 +31,7 @@ class Led:
         if value == True:
             Led.LedOff(pin)
         if value == False:
-            LedOn(pin)
+            Led.LedOn(pin)
         
     def LedOff(outputPin):
         GPIO.setmode(GPIO.BCM)
