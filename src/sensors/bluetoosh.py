@@ -7,6 +7,7 @@ import sys
 #sys.path.append(conf_path)
 #sys.path.append(conf_path + '/home/admin/.local/lib/python3.9/') 
 import time
+import service.macAdress
 from sensors.wifiUpdate import update_wifi
 from sensors.configRewrite import fileRewrite
 
@@ -14,6 +15,8 @@ from sensors.configRewrite import fileRewrite
 class Bluetoosh:
 
     def receiveMessages(self):
+        mac = service.macAdress.get_mac_adress()[-4:]
+        print(mac)
         hostMACAddress = 'B8:27:EB:C9:EF:55'
         port = 2
         backlog = 1
