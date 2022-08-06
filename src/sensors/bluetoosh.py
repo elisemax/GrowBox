@@ -14,7 +14,7 @@ from sensors.configRewrite import fileRewrite
 
 class Bluetoosh:
 
-    def receiveMessages(self):
+    def receiveMessages():
         mac = service.macAdress.get_mac_adress()[-4:]
         print(mac)
         hostMACAddress = 'B8:27:EB:C9:EF:55'
