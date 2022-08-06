@@ -5,9 +5,6 @@ class Led:
     #def __init__(self, first, second, third, fourth):
     #    self.__ledStatus = self.ledControl(mode)
         
-        
-
-    
     
     def ledControl(first, second, third, fourth):
         OutputPin1 = 13
@@ -24,7 +21,7 @@ class Led:
         Led.setLight(13, first)
         Led.setLight(19, second)
         Led.setLight(5, third)
-        Led.setLight(17, fourth)
+        Led.setLight(6, fourth)
         
         
     def setLight(pin, value):
@@ -50,6 +47,8 @@ class Led:
     
         GPIO.setwarnings(False)
         GPIO.output(outputPin, GPIO.LOW)
+    
+
        
 
 
