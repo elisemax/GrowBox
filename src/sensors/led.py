@@ -21,10 +21,10 @@ class Led:
         "third": 5,
         "fourth": 6
         }
-        self.setLight(13, first)
-        self.setLight(19, second)
-        self.setLight(5, third)
-        self.setLight(6, fourth)
+        setLight(13, first)
+        setLight(19, second)
+        setLight(5, third)
+        setLight(6, fourth)
         
         
     def setLight(self, pin, value):
