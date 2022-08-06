@@ -30,10 +30,10 @@ class Adapter:
       #  self.data['temperature'] = sensors.temperature.get_temperature()
         temperature = sensors.temperature.get_temperature()
         return temperature
-    def getLedStatus(first, second, third, fourth):
+    def getLedStatus(self,first, second, third, fourth):
         ledStatus = sensors.led.Led(self,first, second, third, fourth)
-        x = ledStatus.ledControl(self,first, second, third, fourth)
-        return x
+        ledStatus.ledControl(self,first, second, third, fourth)
+        
     def phUpdate(self):
       #  self.data["pH"] = WaterSensors.ph_get_ph()
         return WaterSensors.ph_get_ph()
