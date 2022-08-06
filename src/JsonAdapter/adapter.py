@@ -53,7 +53,7 @@ class Adapter:
 
     def waterLevel(self):
         waterLevel = WaterSensors.waterLevelControl()
-        print("water level button:")
+        print("There is water:")
         print(waterLevel)
         return waterLevel
     
