@@ -27,7 +27,7 @@ class WaterSensors:
     def ph_read_voltage():
         
         adc = Adafruit_ADS1x15.ADS1115()
-        value = adc.read_adc(0,gain=1,data_rate=3300)
+        value = adc.read_adc(0,gain=1)
         #chan = AnalogIn(adc, ADS.P1)
         print("ph value")
         print(value)
