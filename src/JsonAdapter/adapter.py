@@ -58,7 +58,7 @@ class Adapter:
         return waterLevel
     
     def setPump(self, value):
-        Led.setLight(17, value)
+        Led.setLight(22, value)
     @property
     def getTime(self):
         my_date = datetime.now()
