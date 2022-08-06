@@ -27,11 +27,16 @@ class WaterSensors:
     def ph_read_voltage():
         
         adc = Adafruit_ADS1x15.ADS1015()
-        value = adc.read_adc(0,gain=1,data_rate=3300)
-        #chan = AnalogIn(adc, ADS.P1)
-        print("ph value")
-        print(value)
-        x = value * 0.015
+        values = 0
+        for x in [1,2,3,4,5]:
+            value = adc.read_adc(0,gain=1,data_rate=3300)
+            time.sleep(1)
+            print(value)
+            values = values + value
+    
+        print("avg ph value")
+        print(values/5)
+        x = (values/5) * 0.015
     
         result = x - 5.48
         
