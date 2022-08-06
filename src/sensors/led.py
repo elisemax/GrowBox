@@ -21,7 +21,7 @@ class Led:
         Led.setLight(13, first)
         Led.setLight(19, second)
         Led.setLight(5, third)
-        Led.setLight(6, fourth)
+        Led.setLight(22, fourth)
         
         
     def setLight(pin, value):
