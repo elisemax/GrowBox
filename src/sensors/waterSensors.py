@@ -32,9 +32,9 @@ class WaterSensors:
         print("ph value")
         print(value)
         x = value * 0.015
-        print(x)
+    
         result = x - 5.48
-        print(result)
+        
         
         return result
     
@@ -55,7 +55,7 @@ class WaterSensors:
 
     def ph_get_ph():
         pHValue = WaterSensors.ph_read_voltage()
-        return pHValue * 2
+        return pHValue
 
     def ec_get_ec():
         sensorValue = WaterSensors.ec_read_voltage()
