@@ -28,15 +28,15 @@ class WaterSensors:
         
         adc = Adafruit_ADS1x15.ADS1015()
         values = 0
-        for x in [1,2,3,4,5]:
+        for x in [1,2,3,4,5,6,7,8,9,10]:
             value = adc.read_adc(0,gain=1,data_rate=3300)
-            time.sleep(2)
+            time.sleep(1)
             print(value)
             values = values + value
     
         print("avg ph value")
-        print(values/5)
-        x = (values/5) * 0.015
+        print(values/10)
+        x = (values/10) * 0.015
     
         result = x - 5.6
         
