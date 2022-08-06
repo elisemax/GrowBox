@@ -30,17 +30,17 @@ while(True):
         
     #jsonObj = systemGrow.createJsonObj(systemGrow.controlUnitId, systemGrow.ledStatus, systemGrow.temperature, systemGrow.ph, systemGrow.ec, systemGrow.hum, "2022-07-23T13:21:37.000Z");
     #print(jsonObj)
-    post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
-    "controlUnitId": systemGrow.controlUnitId,
-    "name": "Test",
-    "lightsRealStatus": systemGrow.ledStatus,
-    "temperature": systemGrow.temperature,
-    "pH": systemGrow.ph,
-    "humidity1": systemGrow.hum1,
-    "humidity2": systemGrow.hum2,
-    "humidity3": systemGrow.hum3,
-    "humidity4": systemGrow.hum4,
-    "ppm": systemGrow.ec },headers=headers)
+    #post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
+    #"controlUnitId": systemGrow.controlUnitId,
+    #"name": "Test",
+    #"lightsRealStatus": systemGrow.ledStatus,
+    #"temperature": systemGrow.temperature,
+    #"pH": systemGrow.ph,
+    #"humidity1": systemGrow.hum1,
+    #"humidity2": systemGrow.hum2,
+    #"humidity3": systemGrow.hum3,
+    #"humidity4": systemGrow.hum4,
+    #"ppm": systemGrow.ec },headers=headers)
     
     print("ppm: ")
     print(systemGrow.ec)
