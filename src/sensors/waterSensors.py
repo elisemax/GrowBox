@@ -34,8 +34,8 @@ class WaterSensors:
         voltage = value * 4.096 / 32767
         print("ph voltage")
         print(voltage)
-        phDiff = 0.006
-        k = 5.05
+        phDiff = 0.015
+        k = 5.48
         avg = value * phDiff -k
         
         return round(avg,2)
