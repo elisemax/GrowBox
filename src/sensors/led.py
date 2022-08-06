@@ -25,9 +25,9 @@ class Led:
         
         
     def setLight(pin, value):
-        if value == True:
-            Led.LedOff(pin)
         if value == False:
+            Led.LedOff(pin)
+        if value == True:
             Led.LedOn(pin)
         
     def LedOff(outputPin):
