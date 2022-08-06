@@ -4,6 +4,7 @@ import time
 import sys
 import RPi.GPIO as GPIO
 import Adafruit_ADS1x15
+from adafruit_ads1x15.analog_in import AnalogIn
 
 
 class WaterSensors:
