@@ -32,9 +32,9 @@ class WaterSensors:
         print("ph value")
         print(value)
         x = value * 0.015
+        result = x - 5.48
         
-        
-        return avg - 5.48
+        return result
     
     
     def humidity_level_control(pinNumber):
