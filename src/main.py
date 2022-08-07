@@ -53,7 +53,7 @@ while(True):
         
         print("ec: ")
         print(systemGrow.ec)
-        
+        print(systemGrow.controlUnitId)
         
         print("ph")
         print(systemGrow.ph)
