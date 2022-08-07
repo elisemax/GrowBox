@@ -3,7 +3,7 @@ from tokenize import Double
 import time
 import sys
 import RPi.GPIO as GPIO
-
+import Adafruit_ADS1x15
 import adafruit_ads1x15.ads1015 as ADS
 
 
