@@ -28,7 +28,9 @@ while(True):
        
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         #g.pull()
-        
+    
+    systemGrow = ad.Adapter(True, True, True, True)
+    
     post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
     "controlUnitId": systemGrow.controlUnitId,
     "name": "Test",
@@ -43,7 +45,6 @@ while(True):
     
     Bluetoosh.receiveMessages()
             
-    systemGrow = ad.Adapter(True, True, True, True)
     if(systemGrow.hum1==True or systemGrow.hum2==True or systemGrow.hum3 == True or systemGrow.hum4 == True or systemGrow.waterlevel == False):
         print("turning off pump")
         systemGrow.setPump(False)
