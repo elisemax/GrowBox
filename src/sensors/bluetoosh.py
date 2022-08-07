@@ -7,7 +7,7 @@ import sys
 #sys.path.append(conf_path)
 #sys.path.append(conf_path + '/home/admin/.local/lib/python3.9/') 
 import time
-import commands
+import subprocess
 from sensors.wifiUpdate import update_wifi
 from sensors.configRewrite import fileRewrite
 
@@ -18,7 +18,7 @@ class Bluetoosh:
         
         cmd = "hciconfig"
         device_id = "hci0" 
-        status, output = commands.getstatusoutput(cmd)
+        status, output = subprocess.getstatusoutput(cmd)
         bt_mac = output.split("{}:".format(device_id))[1].split("BD Address: ")[1].split(" ")[0].strip()
         print(bt_mac)
 
