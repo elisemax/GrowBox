@@ -15,7 +15,7 @@ import git
 headers = {"Content-Type":"application/json", "Content-Length":"16","Host":"p5023.dev.inited.cz"}
 while(True): 
 
-    try:  
+   # try:  
 
     
         #systemGrow.connectToWifi()
@@ -42,7 +42,7 @@ while(True):
     #"ppm": systemGrow.ec },headers=headers)
         Bluetoosh.receiveMessages()
             
-        systemGrow = ad.Adapter(False, False, False, True)
+        systemGrow = ad.Adapter(True, True, True, True)
         if(systemGrow.hum1==True or systemGrow.hum2==True or systemGrow.hum3 == True or systemGrow.hum4 == True or systemGrow.waterlevel == False):
             print("turning off pump")
             systemGrow.setPump(False)
@@ -59,9 +59,9 @@ while(True):
         
         time.sleep(2)
         
-    except Exception as e:
-            print(e)
-            pass
+   # except Exception as e:
+   #         print(e)
+   #         pass
    
    
 
