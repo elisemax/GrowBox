@@ -29,26 +29,27 @@ while(True):
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         #g.pull()
         
-    #post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
-    #"controlUnitId": systemGrow.controlUnitId,
-    #"name": "Test",
-    #"lightsRealStatus": systemGrow.ledStatus,
-    #"temperature": systemGrow.temperature,
-    #"pH": systemGrow.ph,
-    #"humidity1": systemGrow.hum1,
-    #"humidity2": systemGrow.hum2,
-    #"humidity3": systemGrow.hum3,
-    #"humidity4": systemGrow.hum4,
-    #"ppm": systemGrow.ec },headers=headers)
-        Bluetoosh.receiveMessages()
+    post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
+    "controlUnitId": systemGrow.controlUnitId,
+    "name": "Test",
+    "lightsRealStatus": systemGrow.ledStatus,
+    "temperature": systemGrow.temperature,
+    "pH": systemGrow.ph,
+    "humidity1": systemGrow.hum1,
+    "humidity2": systemGrow.hum2,
+    "humidity3": systemGrow.hum3,
+    "humidity4": systemGrow.hum4,
+    "ppm": systemGrow.ec },headers=headers)
+    
+    Bluetoosh.receiveMessages()
             
-        systemGrow = ad.Adapter(True, True, True, True)
-        if(systemGrow.hum1==True or systemGrow.hum2==True or systemGrow.hum3 == True or systemGrow.hum4 == True or systemGrow.waterlevel == False):
-            print("turning off pump")
-            systemGrow.setPump(False)
-        else:
-            print("turning on pump")
-            systemGrow.setPump(True)
+    systemGrow = ad.Adapter(True, True, True, True)
+    if(systemGrow.hum1==True or systemGrow.hum2==True or systemGrow.hum3 == True or systemGrow.hum4 == True or systemGrow.waterlevel == False):
+        print("turning off pump")
+        systemGrow.setPump(False)
+    else:
+        print("turning on pump")
+        systemGrow.setPump(True)
         
         print("ec: ")
         print(systemGrow.ec)
