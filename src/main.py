@@ -42,7 +42,7 @@ while(True):
     #"ppm": systemGrow.ec },headers=headers)
         Bluetoosh.receiveMessages()
             
-        systemGrow = ad.Adapter(True,True,True,True)
+        systemGrow = ad.Adapter(False, False, False, False)
         if(systemGrow.hum1==True or systemGrow.hum2==True or systemGrow.hum3 == True or systemGrow.hum4 == True or systemGrow.waterlevel == False):
             print("turning off pump")
             systemGrow.setPump(False)
