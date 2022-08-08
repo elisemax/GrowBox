@@ -34,7 +34,6 @@ systemGrow = ad.Adapter(True, True, True, True)
 response = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
 "controlUnitId": systemGrow.controlUnitId,
 "name": "Test",
-"lightsRealStatus": systemGrow.ledStatus,
 "temperature": systemGrow.temperature,
 "pH": systemGrow.ph,
 "humidity1": systemGrow.hum1,
