@@ -31,7 +31,7 @@ headers = {"Content-Type":"application/json", "Content-Length":"16","Host":"p502
     
 systemGrow = ad.Adapter(True, True, True, True)
     
-post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
+response = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
 "controlUnitId": systemGrow.controlUnitId,
 "name": "Test",
 "lightsRealStatus": systemGrow.ledStatus,
@@ -42,6 +42,7 @@ post = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
 "humidity3": systemGrow.hum3,
 "humidity4": systemGrow.hum4,
 "ppm": systemGrow.ec },headers=headers)
+print(response.content)
     
 Bluetoosh.receiveMessages()
             
