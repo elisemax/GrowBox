@@ -32,8 +32,8 @@ headers = {"Content-Type":"application/json", "Content-Length":"16","Host":"p502
 systemGrow = ad.Adapter(True, True, True, True)
     
 response = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
-"controlUnitId": systemGrow.controlUnitId,
-"name": "Test",
+"controlUnitId": "AppleFarm",
+"name": "Apple",
 "temperature": systemGrow.temperature,
 "pH": systemGrow.ph,
 "humidity1": systemGrow.hum1,
