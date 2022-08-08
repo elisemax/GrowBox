@@ -22,7 +22,7 @@ class Adapter:
         self.hum2 = self.humUpdate(16)
         self.hum3 = self.humUpdate(20)
         self.hum4 = self.humUpdate(21)
-        self.controlUnitId = "NEWFARM111-"+service.macAdress.get_mac_adress()
+        self.controlUnitId = "NEWFARM112-"+service.macAdress.get_mac_adress()
         self.waterlevel = self.waterLevel()
    
            
