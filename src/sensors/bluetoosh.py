@@ -24,7 +24,7 @@ class Bluetoosh:
 
         hostMACAddress = 'B8:27:EB:9D:06:25'
         #+mac
-        print(hostMACAddress)
+        #print(hostMACAddress)
     
         port = 2
         backlog = 1
