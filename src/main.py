@@ -33,6 +33,7 @@ while(True):
     
 
     datetime_object = datetime.datetime.now()
+    dateString = datetime_object.strftime('%d-%b-%Y (%H:%M:%S.%f)')
     print(datetime_object)
     response = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
     "controlUnitId": systemGrow.controlUnitId,
@@ -44,7 +45,7 @@ while(True):
     "humidity3": systemGrow.hum3,
     "humidity4": systemGrow.hum4,
     "ppm": systemGrow.ec,
-    "createdAt":datetime_object.strftime("%d-%b-%Y (%H:%M:%S.%f)")
+    "createdAt": dateString
     }, headers=headers),
     
     print(response.content)
