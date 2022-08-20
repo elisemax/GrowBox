@@ -27,7 +27,7 @@ class WaterSensors:
         adc = Adafruit_ADS1x15.ADS1115()
         values = 0
         for x in [1,2,3,4,5]:
-            value = adc.read_adc(0,gain=1,data_rate=3300)
+            value = adc.read_adc(0,gain=1,data_rate=860)
             values = values + value
     
         x = (values/5) * 0.015
