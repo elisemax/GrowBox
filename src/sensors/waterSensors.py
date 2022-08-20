@@ -31,6 +31,8 @@ class WaterSensors:
         values = 0
         for x in [1,2,3,4,5]:
             value = adc.read_adc(0,gain=1,data_rate=16)
+            print('ph value')
+            print(value)
             values = values + value
         x1 = values/5
         print('ph value')
