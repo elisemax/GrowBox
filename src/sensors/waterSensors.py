@@ -34,7 +34,7 @@ class WaterSensors:
             values = values + value
     
         x1 = values/5
-        result = (x1 / 1000) * m + b
+        result = m * (x1 / 1000)  + b
         print('ph value')
         print(result)
         
