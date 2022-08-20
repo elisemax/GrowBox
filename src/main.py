@@ -8,6 +8,7 @@ import requests
 import JsonAdapter.adapter as ad
 import time
 import git
+import datetime
 
 
 
@@ -25,12 +26,14 @@ while(True):
     #True,True,True,True
         
     
-       
         #g = git.cmd.Git('https://github.com/elisemax/GrowBox.git')
         #g.pull()
     headers = {"Content-Type":"application/json", "Content-Length":"16","Host":"p5023.dev.inited.cz"}
     systemGrow = ad.Adapter(True, True, True, True)
     
+
+    datetime_object = datetime.datetime.now()
+    print(datetime_object)
     response = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
     "controlUnitId": systemGrow.controlUnitId,
     "name": "AugustFarm",
@@ -40,7 +43,10 @@ while(True):
     "humidity2": systemGrow.hum2,
     "humidity3": systemGrow.hum3,
     "humidity4": systemGrow.hum4,
-    "ppm": systemGrow.ec },headers=headers)
+    "ppm": systemGrow.ec,
+    "createdAt":datetime_object.strftime(),
+    }, headers=headers),
+    
     print(response.content)
     
     #Led.ledControl(response)
