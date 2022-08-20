@@ -9,6 +9,7 @@ import sys
 import time
 import subprocess
 from sensors.configRewrite import fileRewrite
+from sensors.configRewrite import update_wifi
 
 
 class Bluetoosh:
