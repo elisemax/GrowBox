@@ -49,7 +49,7 @@ while(True):
     }, headers=headers),
     
     print(response)
-    print(response.contents)
+    print(response.body)
     
     #Led.ledControl(response)
 
