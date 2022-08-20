@@ -48,7 +48,7 @@ while(True):
     "createdAt": dateString
     }, headers=headers),
     
-    print(response.content)
+    print(response)
     
     #Led.ledControl(response)
 
