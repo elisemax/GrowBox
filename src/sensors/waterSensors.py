@@ -33,12 +33,13 @@ class WaterSensors:
             value = adc.read_adc(0,gain=1,data_rate=16)
             values = values + value
         x1 = values/5
+        print('ph value')
         print(x1)
         result = m * (x1 / 1000)  + b
-        print('ph value')
+        print('ph')
         print(result)
         
-        return x
+        return result
     
     
     def humidity_level_control(pinNumber):
