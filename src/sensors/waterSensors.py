@@ -25,21 +25,19 @@ class WaterSensors:
         return round(avg,2)
 
     def ph_read_voltage():
-        
+        m = -48.4   #calibration for violet ads
+        b = 15.71
         adc = Adafruit_ADS1x15.ADS1115()
         values = 0
         for x in [1,2,3,4,5]:
             value = adc.read_adc(0,gain=1,data_rate=16)
             values = values + value
     
-        x = (values/5) * 0.015
+        x = (values/5)/1000 * m + b
         print('ph value')
         print(x)
-    
-        result = x - 5.6
         
-        
-        return result
+        return x
     
     
     def humidity_level_control(pinNumber):
