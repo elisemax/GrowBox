@@ -33,7 +33,7 @@ while(True):
     
     response = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
     "controlUnitId": systemGrow.controlUnitId,
-    "name": "Apple",
+    "name": "AugustFarm",
     "temperature": systemGrow.temperature,
     "pH": systemGrow.ph,
     "humidity1": systemGrow.hum1,
