@@ -44,12 +44,11 @@ while(True):
     "humidity2": systemGrow.hum2,
     "humidity3": systemGrow.hum3,
     "humidity4": systemGrow.hum4,
-    "ppm": systemGrow.ec,
-    "createdAt": dateString
+    "ppm": systemGrow.ec
     }, headers=headers),
     
     print(response)
-    print(response.data)
+    print(response.content)
     
     #Led.ledControl(response)
 
