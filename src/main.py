@@ -52,8 +52,10 @@ while(True):
     print('ph:')
     print(systemGrow.ph)
 
+    print('ec')
+    print(systemGrow.ec)
         
-    Bluetoosh.receiveMessages()
+    #Bluetoosh.receiveMessages()
                 
     if (systemGrow.hum1==True or systemGrow.hum2==True or systemGrow.hum3 == True or systemGrow.hum4 == True or systemGrow.waterlevel == False):
         print("turning off pump")
