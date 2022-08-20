@@ -47,7 +47,6 @@ while(True):
     "ppm": systemGrow.ec
     }, headers=headers),
     
-    print(response.code)
     
     #Led.ledControl(response)
     print('ph:')
