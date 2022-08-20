@@ -47,10 +47,11 @@ while(True):
     "ppm": systemGrow.ec
     }, headers=headers),
     
-    print(response)
-    print(response.content)
+    print(response.code)
     
     #Led.ledControl(response)
+    print('ph:')
+    print(systemGrow.ph)
 
         
     Bluetoosh.receiveMessages()
