@@ -44,7 +44,7 @@ while(True):
     "humidity3": systemGrow.hum3,
     "humidity4": systemGrow.hum4,
     "ppm": systemGrow.ec,
-    "createdAt":datetime_object.strftime(),
+    "createdAt":datetime_object.strftime(Format_String),
     }, headers=headers),
     
     print(response.content)
