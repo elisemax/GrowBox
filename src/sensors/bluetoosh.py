@@ -20,17 +20,19 @@ class Bluetoosh:
         device_id = "hci0" 
         status, output = subprocess.getstatusoutput(cmd)
         bt_mac = output.split("{}:".format(device_id))[1].split("BD Address: ")[1].split(" ")[0].strip()
+        print("from bluetoosh")
         print(bt_mac)
 
         hostMACAddress = 'B8:27:EB:9D:06:25'
         #+mac
         #print(hostMACAddress)
+        
     
         port = 2
         backlog = 1
         size = 1024
         s = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
-        s.bind((hostMACAddress, port))
+        s.bind((bt_mac, port))
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.settimeout(30)
         s.listen(backlog)

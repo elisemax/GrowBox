@@ -13,7 +13,6 @@ from sensors.led import Led
 class Adapter:
     def __init__(self,first, second, third, fourth):
         self.json_path = 'JsonAdapter/data.json'
-        #  self.data = self.Json_Obj()
         self.ledStatus = self.setLed(first, second, third, fourth)
         self.temperature =  self.temperatureUpdate()
         self.ph = self.phUpdate()
@@ -22,7 +21,7 @@ class Adapter:
         self.hum2 = self.humUpdate(16)
         self.hum3 = self.humUpdate(20)
         self.hum4 = self.humUpdate(21)
-        self.controlUnitId = "NEWFARM112-"+service.macAdress.get_mac_adress()
+        self.controlUnitId = "FARM-" + service.macAdress.get_mac_adress()
         self.waterlevel = self.waterLevel()
    
            

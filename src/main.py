@@ -32,7 +32,7 @@ while(True):
     systemGrow = ad.Adapter(True, True, True, True)
     
     response = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
-    "controlUnitId": "AppleFarm",
+    "controlUnitId": systemGrow.controlUnitId,
     "name": "Apple",
     "temperature": systemGrow.temperature,
     "pH": systemGrow.ph,
@@ -42,10 +42,13 @@ while(True):
     "humidity4": systemGrow.hum4,
     "ppm": systemGrow.ec },headers=headers)
     print(response.content)
+    
+    #Led.ledControl(response)
+
         
     Bluetoosh.receiveMessages()
                 
-    if(systemGrow.hum1==True or systemGrow.hum2==True or systemGrow.hum3 == True or systemGrow.hum4 == True or systemGrow.waterlevel == False):
+    if (systemGrow.hum1==True or systemGrow.hum2==True or systemGrow.hum3 == True or systemGrow.hum4 == True or systemGrow.waterlevel == False):
         print("turning off pump")
         systemGrow.setPump(False)
     else:
