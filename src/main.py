@@ -50,7 +50,7 @@ while(True):
     
     print(response)
     
-    #Led.ledControl(response)
+    Led.ledControl(response)
 
         
     #Bluetoosh.receiveMessages()
