@@ -20,10 +20,8 @@ class Bluetoosh:
         device_id = "hci0" 
         status, output = subprocess.getstatusoutput(cmd)
         bt_mac = output.split("{}:".format(device_id))[1].split("BD Address: ")[1].split(" ")[0].strip()
-        print("from bluetoosh")
-        print(bt_mac)
 
-        hostMACAddress = 'B8:27:EB:9D:06:25'
+        #hostMACAddress = 'B8:27:EB:9D:06:25'
         #+mac
         #print(hostMACAddress)
         
