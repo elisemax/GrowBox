@@ -34,7 +34,7 @@ while(True):
 
     datetime_object = datetime.datetime.now()
     dateString = datetime_object.strftime('%d-%b-%Y (%H:%M:%S.%f)')
-    print(datetime_object)
+    print(dateString)
     response = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
     "controlUnitId": systemGrow.controlUnitId,
     "name": "AugustFarm",
