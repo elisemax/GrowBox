@@ -8,7 +8,6 @@ import sys
 #sys.path.append(conf_path + '/home/admin/.local/lib/python3.9/') 
 import time
 import subprocess
-from sensors.wifiUpdate import update_wifi
 from sensors.configRewrite import fileRewrite
 
 
