@@ -54,7 +54,7 @@ class Bluetoosh:
                     print(name)
                     print(password)
                     s.close()
-                    update_wifi("/home/admin/GrowBox/src/service/wpa_supplicant.conf",name,password)
+                    update_wifi(name,password)
                     fileRewrite()
         except Exception as e:
             print(e)
