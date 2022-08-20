@@ -33,7 +33,7 @@ while(True):
     
 
     datetime_object = datetime.datetime.now()
-    dateString = str(datetime_object)[:-1]
+    dateString = str(datetime_object)[:-4]
     print(dateString)
     response = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
     "controlUnitId": systemGrow.controlUnitId,
