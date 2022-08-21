@@ -71,11 +71,10 @@ else:
         
     print("ph")
     print(systemGrow.ph)
+    #txt_log = "ec = "+ systemGrow.ec + "ph = " + systemGrow.p
     
-    
-txt_log = "ec = "+ systemGrow.ec + "ph = " + systemGrow.ph
-cmd = 'echo ' + txt_log + ' >> /home/frm04/crontest.txt'
-os.system(cmd)
+ph = systemGrow.ph
+os.system('echo "' +ph+ '" >> /home/frm04/crontest.txt')
             
         
         
