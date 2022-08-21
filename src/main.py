@@ -74,7 +74,9 @@ else:
     #txt_log = "ec = "+ systemGrow.ec + "ph = " + systemGrow.p
     
 ph = systemGrow.ph
-os.system("echo '" +ph+ "' >> /home/frm04/crontest.txt")
+cmd = "echo '" +ph+ "' >> /home/frm04/crontest.txt"
+os.system(cmd)
+os.system("echo 'ph' >> /home/frm04/crontest.txt")
             
         
         
