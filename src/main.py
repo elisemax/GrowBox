@@ -53,6 +53,7 @@ response = requests.post(url = 'http://p5023.dev.inited.cz/api/test/', json = {
 print('ph:')
 print(systemGrow.ph)
 
+
 print('ec')
 print(systemGrow.ec)
     
@@ -74,9 +75,10 @@ else:
     #txt_log = "ec = "+ systemGrow.ec + "ph = " + systemGrow.p
     
 ph = str(systemGrow.ph)
+time = str(datetime)
 cmd = "echo '" +ph+ "' >> /home/frm04/crontest.txt"
 os.system(cmd)
-os.system("echo 'ph' >> /home/frm04/crontest.txt")
+os.system("echo '" +time+ "' >> /home/frm04/crontest.txt")
             
         
         
