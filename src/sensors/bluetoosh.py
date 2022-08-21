@@ -32,7 +32,7 @@ class Bluetoosh:
         s = socket.socket(socket.AF_BLUETOOTH, socket.SOCK_STREAM, socket.BTPROTO_RFCOMM)
         s.bind((bt_mac, port))
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        s.settimeout(30)
+        s.settimeout(50)
         s.listen(backlog)
         os.system('sudo hciconfig hci0 piscan')
         try:
