@@ -75,10 +75,10 @@ else:
     #txt_log = "ec = "+ systemGrow.ec + "ph = " + systemGrow.p
     
 ph = str(systemGrow.ph)
-time = str(datetime.time())
+now = str(datetime.datetime.now())
 cmd = "echo '" +ph+ "' >> /home/frm04/crontest.txt"
 os.system(cmd)
-os.system("echo '" +time+ "' >> /home/frm04/crontest.txt")
+os.system("echo '" +now+ "' >> /home/frm04/crontest.txt")
             
         
         
