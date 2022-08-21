@@ -9,6 +9,7 @@ import JsonAdapter.adapter as ad
 import time
 import git
 import datetime
+import os
 
 
 
@@ -70,6 +71,8 @@ else:
         
     print("ph")
     print(systemGrow.ph)
+
+os.system('echo "text here" >> /home/frm04/crontest.txt')
             
         
         
