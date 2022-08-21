@@ -34,10 +34,10 @@ class WaterSensors:
             print('ph value')
             print(value)
             values = values + value
-        x1 = values/5
+        avg_value = values/5
         print('ph value')
-        print(x1)
-        result = m * (x1 / 1000)  + b
+        print(avg_value)
+        result = m * (avg_value * 0.015 / 1000)  + b
         print('ph')
         print(result)
         
