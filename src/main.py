@@ -71,8 +71,9 @@ else:
         
     print("ph")
     print(systemGrow.ph)
+    txt_log = "ec = "+ systemGrow.ec + "ph = " + systemGrow.ph
 
-os.system('echo "text here" >> /home/frm04/crontest.txt')
+os.system('echo ' + txt_log + ' >> /home/frm04/crontest.txt')
             
         
         
