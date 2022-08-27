@@ -8,10 +8,10 @@ import adafruit_ads1x15.ads1115 as ADS
 
 
 class WaterSensors:
-    ph4 = 3.11
-    ph7 = 2.58
-    m = - 5.641509
-    b = 21.55509299
+   # ph4 = 3.11
+    #ph7 = 2.58
+   # m = - 5.641509
+   # b = 21.55509299
 
     def ec_read_voltage():
         

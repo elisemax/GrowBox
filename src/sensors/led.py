@@ -2,9 +2,6 @@ import RPi.GPIO as GPIO
 
 
 class Led:
-    #def __init__(self, first, second, third, fourth):
-    #    self.__ledStatus = self.ledControl(mode)
-        
     
     def ledControl(first, second, third, fourth):
         OutputPin1 = 13
